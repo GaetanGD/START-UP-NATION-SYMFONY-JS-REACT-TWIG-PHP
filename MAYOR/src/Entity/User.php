@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -119,6 +121,22 @@ class User implements UserInterface
      * @ORM\Column(type="integer", nullable=true)
      */
     private $environment;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Travel::class, mappedBy="user_id")
+     */
+    private $travel;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Activity::class, mappedBy="user_id")
+     */
+    private $activity;
+
+    public function __construct()
+    {
+        $this->travel = new ArrayCollection();
+        $this->activity = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -401,6 +419,66 @@ class User implements UserInterface
     public function setEnvironment(?int $environment): self
     {
         $this->environment = $environment;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Travel[]
+     */
+    public function getTravel(): Collection
+    {
+        return $this->travel;
+    }
+
+    public function addTravel(Travel $travel): self
+    {
+        if (!$this->travel->contains($travel)) {
+            $this->travel[] = $travel;
+            $travel->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTravel(Travel $travel): self
+    {
+        if ($this->travel->removeElement($travel)) {
+            // set the owning side to null (unless already changed)
+            if ($travel->getUserId() === $this) {
+                $travel->setUserId(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Activity[]
+     */
+    public function getActivity(): Collection
+    {
+        return $this->activity;
+    }
+
+    public function addActivity(Activity $activity): self
+    {
+        if (!$this->activity->contains($activity)) {
+            $this->activity[] = $activity;
+            $activity->setUserId($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActivity(Activity $activity): self
+    {
+        if ($this->activity->removeElement($activity)) {
+            // set the owning side to null (unless already changed)
+            if ($activity->getUserId() === $this) {
+                $activity->setUserId(null);
+            }
+        }
 
         return $this;
     }

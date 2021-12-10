@@ -34,6 +34,12 @@ class Travel
      */
     private $activity;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="travel")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user_id;
+
     public function __construct()
     {
         $this->activity = new ArrayCollection();
@@ -88,6 +94,18 @@ class Travel
     public function removeActivity(Activity $activity): self
     {
         $this->activity->removeElement($activity);
+
+        return $this;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(?User $user_id): self
+    {
+        $this->user_id = $user_id;
 
         return $this;
     }

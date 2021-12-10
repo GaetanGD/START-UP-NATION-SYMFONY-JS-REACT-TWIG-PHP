@@ -109,10 +109,22 @@ class Activity
      */
     private $hourlies;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=User::class, inversedBy="activity")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $user_id;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="activity")
+     */
+    private $pictures;
+
     public function __construct()
     {
         $this->yes = new ArrayCollection();
         $this->hourlies = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -363,6 +375,48 @@ class Activity
             // set the owning side to null (unless already changed)
             if ($hourly->getActivity() === $this) {
                 $hourly->setActivity(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getUserId(): ?User
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(?User $user_id): self
+    {
+        $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Picture[]
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setActivity($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): self
+    {
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getActivity() === $this) {
+                $picture->setActivity(null);
             }
         }
 
