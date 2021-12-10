@@ -28,6 +28,12 @@ class Picture
      */
     private $activity;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Travel::class, inversedBy="pictures")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $travel;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -53,6 +59,18 @@ class Picture
     public function setActivity(?Activity $activity): self
     {
         $this->activity = $activity;
+
+        return $this;
+    }
+
+    public function getTravel(): ?Travel
+    {
+        return $this->travel;
+    }
+
+    public function setTravel(?Travel $travel): self
+    {
+        $this->travel = $travel;
 
         return $this;
     }

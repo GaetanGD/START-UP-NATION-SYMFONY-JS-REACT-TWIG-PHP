@@ -40,9 +40,15 @@ class Travel
      */
     private $user_id;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="travel")
+     */
+    private $pictures;
+
     public function __construct()
     {
         $this->activity = new ArrayCollection();
+        $this->pictures = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -106,6 +112,36 @@ class Travel
     public function setUserId(?User $user_id): self
     {
         $this->user_id = $user_id;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Picture[]
+     */
+    public function getPictures(): Collection
+    {
+        return $this->pictures;
+    }
+
+    public function addPicture(Picture $picture): self
+    {
+        if (!$this->pictures->contains($picture)) {
+            $this->pictures[] = $picture;
+            $picture->setTravel($this);
+        }
+
+        return $this;
+    }
+
+    public function removePicture(Picture $picture): self
+    {
+        if ($this->pictures->removeElement($picture)) {
+            // set the owning side to null (unless already changed)
+            if ($picture->getTravel() === $this) {
+                $picture->setTravel(null);
+            }
+        }
 
         return $this;
     }
