@@ -87,6 +87,11 @@ class Hourly
      */
     private $closure_time_sunday;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Activity::class, inversedBy="hourlies")
+     */
+    private $activity;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -256,6 +261,18 @@ class Hourly
     public function setClosureTimeSunday(?\DateTimeInterface $closure_time_sunday): self
     {
         $this->closure_time_sunday = $closure_time_sunday;
+
+        return $this;
+    }
+
+    public function getActivity(): ?Activity
+    {
+        return $this->activity;
+    }
+
+    public function setActivity(?Activity $activity): self
+    {
+        $this->activity = $activity;
 
         return $this;
     }

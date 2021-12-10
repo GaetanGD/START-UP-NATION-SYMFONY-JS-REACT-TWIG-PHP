@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ActivityRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -96,6 +98,22 @@ class Activity
      * @ORM\Column(type="date")
      */
     private $calendar;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Travel::class, mappedBy="activity")
+     */
+    private $yes;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Hourly::class, mappedBy="activity")
+     */
+    private $hourlies;
+
+    public function __construct()
+    {
+        $this->yes = new ArrayCollection();
+        $this->hourlies = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -290,6 +308,63 @@ class Activity
     public function setCalendar(\DateTimeInterface $calendar): self
     {
         $this->calendar = $calendar;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Travel[]
+     */
+    public function getYes(): Collection
+    {
+        return $this->yes;
+    }
+
+    public function addYe(Travel $ye): self
+    {
+        if (!$this->yes->contains($ye)) {
+            $this->yes[] = $ye;
+            $ye->addActivity($this);
+        }
+
+        return $this;
+    }
+
+    public function removeYe(Travel $ye): self
+    {
+        if ($this->yes->removeElement($ye)) {
+            $ye->removeActivity($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Hourly[]
+     */
+    public function getHourlies(): Collection
+    {
+        return $this->hourlies;
+    }
+
+    public function addHourly(Hourly $hourly): self
+    {
+        if (!$this->hourlies->contains($hourly)) {
+            $this->hourlies[] = $hourly;
+            $hourly->setActivity($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHourly(Hourly $hourly): self
+    {
+        if ($this->hourlies->removeElement($hourly)) {
+            // set the owning side to null (unless already changed)
+            if ($hourly->getActivity() === $this) {
+                $hourly->setActivity(null);
+            }
+        }
 
         return $this;
     }
