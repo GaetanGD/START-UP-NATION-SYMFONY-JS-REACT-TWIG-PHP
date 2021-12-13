@@ -13,20 +13,24 @@ class VoyageType extends AbstractType
     {
         $builder
            
-            ->add('main_picture')
-            ->add('country')
-            ->add('state')
-            ->add('city')
-            ->add('description')
-            ->add('price')
-            ->add('equipment')
-            ->add('transport')
-            ->add('atmosphere')
-            ->add('top food')
-            ->add('top activity')
-            ->add('top logement')
-            ->add('top conseil')
-            ->add('yes')
+        ->add('name')
+        ->add('main_picture')
+        ->add('price')
+        ->add('equipment')
+        ->add('reservation')
+        ->add('atmosphere')
+        ->add('country')
+        ->add('postal_code')
+        ->add('state')
+        ->add('city')
+        ->add('address_1')
+        ->add('address_2')
+        ->add('description')
+        ->add('strong_point')
+        ->add('weak_point')
+        ->add('calendar')
+        ->add('yes')
+        ->add('user_id')
         ;
     }
 
