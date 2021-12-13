@@ -6,11 +6,14 @@
     <h1>Formulaire D'inscription</h1>
 
     {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.firstname) }}
+        {{ form_row(registrationForm.lastname) }}
         {{ form_row(registrationForm.email) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
         CGU {{ form_widget(registrationForm.CGU) }}
+        <p>Newsletter {{ form_widget(registrationForm.newsletter) }}</p>
 
         <button type="submit" class="btn">S'inscrire</button>
     {{ form_end(registrationForm) }}
