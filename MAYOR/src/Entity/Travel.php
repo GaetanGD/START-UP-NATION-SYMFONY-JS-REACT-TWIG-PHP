@@ -50,20 +50,6 @@ class Travel
      */
     private $advice;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $top_restaurant;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $top_activity;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $top_accommodation;
 
     /**
      * @ORM\Column(type="integer")
@@ -85,11 +71,7 @@ class Travel
      */
     private $weather_report;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $type;
-
+    
     public function __construct()
     {
         $this->activity = new ArrayCollection();
@@ -203,42 +185,6 @@ class Travel
         return $this;
     }
 
-    public function getTopRestaurant(): ?string
-    {
-        return $this->top_restaurant;
-    }
-
-    public function setTopRestaurant(?string $top_restaurant): self
-    {
-        $this->top_restaurant = $top_restaurant;
-
-        return $this;
-    }
-
-    public function getTopActivity(): ?string
-    {
-        return $this->top_activity;
-    }
-
-    public function setTopActivity(?string $top_activity): self
-    {
-        $this->top_activity = $top_activity;
-
-        return $this;
-    }
-
-    public function getTopAccommodation(): ?string
-    {
-        return $this->top_accommodation;
-    }
-
-    public function setTopAccommodation(?string $top_accommodation): self
-    {
-        $this->top_accommodation = $top_accommodation;
-
-        return $this;
-    }
-
     public function getPrice(): ?int
     {
         return $this->price;
@@ -287,15 +233,4 @@ class Travel
         return $this;
     }
 
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    public function setType(string $type): self
-    {
-        $this->type = $type;
-
-        return $this;
-    }
 }
