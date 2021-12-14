@@ -13,8 +13,13 @@ class VoyageFormController extends AbstractController
      */
     public function index(): Response
     {
+        $travel = new Travel();
+        $form = $this->createForm(VoyageFormType::class, $travel);
+
         return $this->render('voyage_form/index.html.twig', [
             'controller_name' => 'VoyageFormController',
+            'VoyageForm' =>  $form->createView()
         ]);
     }
 }
+
