@@ -8,9 +8,15 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
+<a href="{{path('XXXXXXXXXXXXXXXXXa completer XXXXXXXXXX') }}">Précédent</a>
+
 <div class="example-wrapper">
-    <h1>Questionnaire<h1>
-    <a href="{{path('surveyquestion1',{id: user.id}) }}">Suivant</a>
-    <a href="{{path('home') }}">Plus tard</a>
+    <h1>Hello {{ controller_name }}! ✅</h1>
+
+     {{ form_start(form) }}
+
+    <button>{{ button_label|default('Suivant')}} </button>
+
+    {{ form_end(form, {'render_rest': false} }} {# a supprimer si conflit avec form_row #}
 </div>
 {% endblock %}
