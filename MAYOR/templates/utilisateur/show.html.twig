@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+    <h1>User</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ user.password }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ user.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ user.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Newsletter</th>
+                <td>{{ user.newsletter ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Cgu</th>
+                <td>{{ user.cgu ? user.cgu|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>User_picture</th>
+                <td>{{ user.userPicture }}</td>
+            </tr>
+            <tr>
+                <th>Certification</th>
+                <td>{{ user.certification }}</td>
+            </tr>
+            <tr>
+                <th>About</th>
+                <td>{{ user.about }}</td>
+            </tr>
+            <tr>
+                <th>Budget</th>
+                <td>{{ user.budget }}</td>
+            </tr>
+            <tr>
+                <th>Temperature</th>
+                <td>{{ user.temperature }}</td>
+            </tr>
+            <tr>
+                <th>Duration</th>
+                <td>{{ user.duration }}</td>
+            </tr>
+            <tr>
+                <th>Favorite_food</th>
+                <td>{{ user.favoriteFood }}</td>
+            </tr>
+            <tr>
+                <th>Geographical_area</th>
+                <td>{{ user.geographicalArea }}</td>
+            </tr>
+            <tr>
+                <th>Means_of_locomotion</th>
+                <td>{{ user.meansOfLocomotion }}</td>
+            </tr>
+            <tr>
+                <th>Difficulty_level</th>
+                <td>{{ user.difficultyLevel }}</td>
+            </tr>
+            <tr>
+                <th>Accompaniement</th>
+                <td>{{ user.accompaniement }}</td>
+            </tr>
+            <tr>
+                <th>Comfort</th>
+                <td>{{ user.comfort }}</td>
+            </tr>
+            <tr>
+                <th>Environment</th>
+                <td>{{ user.environment }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('utilisateur_index') }}">back to list</a>
+
+    <a href="{{ path('utilisateur_edit', {'id': user.id}) }}">edit</a>
+
+    {{ include('utilisateur/_delete_form.html.twig') }}
+{% endblock %}
