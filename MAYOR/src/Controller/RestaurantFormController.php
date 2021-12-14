@@ -16,7 +16,7 @@ class RestaurantFormController extends AbstractController
      */
     public function index(): Response
     {
-        $restaurant = new Restaurant();
+        $restaurant = new Activity();
         $form = $this->createForm(RestaurantFormType::class, $restaurant);
 
         return $this->render('restaurant_form/index.html.twig', [
