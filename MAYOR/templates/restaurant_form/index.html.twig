@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire Restaurant{% endblock %}
+
+{% block body %}
+{{ form_start(ActivityForm) }}
+        
+
+        <button type="submit" class="btn">Validé</button>
+    {{ form_end(ActivityForm) }}
+{% endblock %}
