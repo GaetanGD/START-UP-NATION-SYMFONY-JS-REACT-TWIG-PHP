@@ -85,6 +85,11 @@ class Travel
      */
     private $weather_report;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $type;
+
     public function __construct()
     {
         $this->activity = new ArrayCollection();
@@ -278,6 +283,18 @@ class Travel
     public function setWeatherReport(int $weather_report): self
     {
         $this->weather_report = $weather_report;
+
+        return $this;
+    }
+
+    public function getType(): ?string
+    {
+        return $this->type;
+    }
+
+    public function setType(string $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }

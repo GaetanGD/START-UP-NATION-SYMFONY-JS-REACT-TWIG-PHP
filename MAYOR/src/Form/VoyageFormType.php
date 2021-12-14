@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+
 use App\Entity\Travel;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,16 +15,16 @@ class VoyageFormType extends AbstractType
         $builder
             ->add('name')
             ->add('main_picture')
-            ->add('advice')
-            ->add('top_restaurant')
-            ->add('top_activity')
-            ->add('top_accommodation')
-            ->add('activity')
-            ->add('user_id')
+           # ->add('activity')
+           # ->add('user_id')
             ->add('transport')
             ->add('weather_report')
             ->add('price')
             ->add('equipment')
+            ->add('top_restaurant')
+            ->add('top_activity')
+            ->add('top_accommodation')
+            ->add('advice')
         ;
     }
 
