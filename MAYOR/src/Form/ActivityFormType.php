@@ -12,14 +12,14 @@ class ActivityFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            #->add('name')
+            ->add('name')
             ->add('main_picture')
             ->add('price')
             ->add('equipment')
             ->add('reservation')
             ->add('atmosphere')
             ->add('country')
-            #->add('postal_code')
+            ->add('postal_code')
             ->add('state')
             ->add('city')
             ->add('address_1')
@@ -28,7 +28,7 @@ class ActivityFormType extends AbstractType
             ->add('description')
             ->add('strong_point')
             ->add('weak_point')
-            #->add('yes')
+            ->add('yes')
             #->add('user_id')
         ;
     }
