@@ -28,8 +28,8 @@ class AccommodationFormType extends AbstractType
             ->add('strong_point')
             ->add('weak_point')
             ->add('calendar')
-            ->add('yes')
-            ->add('user_id')
+           # ->add('yes')
+           # ->add('user_id')
         ;
     }
 
