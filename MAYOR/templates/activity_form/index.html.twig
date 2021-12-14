@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Activité{% endblock %}
+
+{% block body %}
+
+<h1>Activité</h1>
+{{ form_start(ActivityForm) }}
+        
+
+        <button type="submit" class="btn">Validé</button>
+    {{ form_end(ActivityForm) }}
+
+{% endblock %}
