@@ -50,6 +50,41 @@ class Travel
      */
     private $advice;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $top_restaurant;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $top_activity;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $top_accommodation;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $equipment;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $transport;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $weather_report;
+
     public function __construct()
     {
         $this->activity = new ArrayCollection();
@@ -159,6 +194,90 @@ class Travel
     public function setAdvice(?string $advice): self
     {
         $this->advice = $advice;
+
+        return $this;
+    }
+
+    public function getTopRestaurant(): ?string
+    {
+        return $this->top_restaurant;
+    }
+
+    public function setTopRestaurant(?string $top_restaurant): self
+    {
+        $this->top_restaurant = $top_restaurant;
+
+        return $this;
+    }
+
+    public function getTopActivity(): ?string
+    {
+        return $this->top_activity;
+    }
+
+    public function setTopActivity(?string $top_activity): self
+    {
+        $this->top_activity = $top_activity;
+
+        return $this;
+    }
+
+    public function getTopAccommodation(): ?string
+    {
+        return $this->top_accommodation;
+    }
+
+    public function setTopAccommodation(?string $top_accommodation): self
+    {
+        $this->top_accommodation = $top_accommodation;
+
+        return $this;
+    }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getEquipment(): ?string
+    {
+        return $this->equipment;
+    }
+
+    public function setEquipment(string $equipment): self
+    {
+        $this->equipment = $equipment;
+
+        return $this;
+    }
+
+    public function getTransport(): ?bool
+    {
+        return $this->transport;
+    }
+
+    public function setTransport(bool $transport): self
+    {
+        $this->transport = $transport;
+
+        return $this;
+    }
+
+    public function getWeatherReport(): ?int
+    {
+        return $this->weather_report;
+    }
+
+    public function setWeatherReport(int $weather_report): self
+    {
+        $this->weather_report = $weather_report;
 
         return $this;
     }
