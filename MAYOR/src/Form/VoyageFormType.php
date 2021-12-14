@@ -21,9 +21,7 @@ class VoyageFormType extends AbstractType
             ->add('weather_report')
             ->add('price')
             ->add('equipment')
-            ->add('top_restaurant')
-            ->add('top_activity')
-            ->add('top_accommodation')
+            ->add('description')
             ->add('advice')
         ;
     }
