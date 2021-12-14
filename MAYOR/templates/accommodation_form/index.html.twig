@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccommodationFormController!{% endblock %}
+
+{% block body %}
+<h1>Hebergement</h1>
+{{ form_start(AccommodationForm) }}
+        
+
+        <button type="submit" class="btn">Validé</button>
+    {{ form_end(AccommodationForm) }}
+{% endblock %}
