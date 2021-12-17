@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\User;
+use Symfony\Component\Form\Extension\Core\Type\RangeType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -22,24 +23,6 @@ class SurveyType extends AbstractType
             ->add('lastname')
             ->add('newsletter')
             ->add('cgu')
-            ->add('user_picture')
-            ->add('certification')
-            ->add('about')
-            ->add('budget', RangeType::class, [
-                'attr' => [
-                    'min' => 1,
-                    'max' => 6
-                ],
-            ])
-            ->add('temperature')
-            ->add('duration')
-            ->add('favorite_food')
-            ->add('geographical_area')
-            ->add('means_of_locomotion')
-            ->add('difficulty_level')
-            ->add('accompaniement')
-            ->add('comfort')
-            ->add('environment')
         ;
     }
 

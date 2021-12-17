@@ -9,17 +9,19 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <h1>Hello</h1>
 
-     {{ form_start(form) }}
+    {{ form_start(form) }}
 
-    {{ form_label(form.budget, 'Your name', {
+    {{ form_row(form._token) }}
+
+    {{ form_label(form.budget, 'Quel est votre budget ?', {
     'label_attr': {'class': 'CUSTOM_LABEL_CLASS'}
     }) }}
     {{ form_row(form.budget)}}
 
     <button>{{ button_label|default('Suivant')}} </button>
 
-    {{ form_end(form, {'render_rest': false} }} {# a supprimer si conflit avec form_row #}
+    {{ form_end(form, {'render_rest': false} )}} {# a supprimer si conflit avec form_row #}
 </div>
 {% endblock %}
