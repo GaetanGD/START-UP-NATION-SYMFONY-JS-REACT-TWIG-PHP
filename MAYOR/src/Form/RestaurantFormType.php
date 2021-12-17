@@ -23,7 +23,7 @@ class RestaurantFormType extends AbstractType
             ->add('state')
             ->add('city')
             ->add('address_1')
-            ->add('address_2')
+           # ->add('address_2')
             ->add('description')
             ->add('strong_point')
             ->add('weak_point')
