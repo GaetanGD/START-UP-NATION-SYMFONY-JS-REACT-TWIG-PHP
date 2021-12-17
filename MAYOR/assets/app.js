@@ -8,5 +8,21 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.css';
 
-// start the Stimulus application
-import './bootstrap';
+import React from "react";
+import ReactDOM from 'react-dom';
+import Recherche from "./components/Recherche";
+
+const App = () => {
+    return(
+
+        <div>
+            <Recherche/>
+        </div>
+
+    )
+}
+
+
+if (document.getElementById('root')){
+    ReactDOM.render(<App />, document.getElementById('root'));
+}
