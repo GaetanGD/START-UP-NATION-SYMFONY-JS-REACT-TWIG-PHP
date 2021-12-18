@@ -103,7 +103,7 @@ class SurveyController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('surveyquestion2'));
+            return $this->redirect($this->generateUrl('surveyquestion4'));
         }
 
         return $this->render('/survey/question3.html.twig', [
