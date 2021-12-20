@@ -3,22 +3,24 @@
 {% block title %}Hello SurveyController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<a href="{{path('surveyquestion5') }}" class="previous_question"> &#60  Retour</a>
 
-<a href="{{path('surveyquestion5') }}">Précédent</a>
+<section class="container_survey">
+        {{ form_start(form) }}
+        <p class="question_number">Question 6 sur 10</p>
+        <h1 class="Big_question">Moyen de locomotion</h1>
+        <p class="small_question">Quelles sont le moyen de locomotion souhaités ?</p>
+        {{ form_row(form._token) }}
 
-<div class="example-wrapper">
-    <h1>Hello</h1>
-
-     {{ form_start(form) }}
-
-    {{ form_row(form._token) }}
-
-    <button>{{ button_label|default('Suivant')}} </button>
-
-    {{ form_end(form, {'render_rest': false}) }}
-</div>
+            <div class="range_global">
+                <div class="box_container">
+                {{ form_widget(form.means_of_locomotion)}}
+                </div>
+            </div>
+        <div class="question_button_center">
+        <button class="question_button">{{ button_label|default('Suivant')}} </button>
+        </div>
+        <a href="{{path('home') }}" class="plus_tard">Plus tard</a>
+        {{ form_end(form, {'render_rest': false} )}}
+</section>
 {% endblock %}

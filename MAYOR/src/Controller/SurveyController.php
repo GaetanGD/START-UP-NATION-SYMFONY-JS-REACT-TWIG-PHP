@@ -4,6 +4,16 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\Survey2Type;
+use App\Form\Survey3Type;
+use App\Form\Survey4Type;
+use App\Form\Survey5Type;
+use App\Form\Survey6Type;
+use App\Form\Survey7Type;
+use App\Form\Survey8Type;
+use App\Form\Survey9Type;
+use App\Form\Survey10Type;
+use App\Form\Survey11Type;
+use App\Form\Survey12Type;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,17 +45,15 @@ class SurveyController extends AbstractController
         //$id = $user->getId();
         $em = $this->getDoctrine();
 
-        //$question1 = $em->getRepository(User::class)->find($id);
+        $user = $em->getRepository(User::class)->find($user->getId());
 
-        $form = $this->createForm(Survey2Type::class, $user);
+        $form = $this->createForm(Survey3Type::class, $user);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
         {
-            dump('toto');
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            
 
             return $this->redirectToRoute('surveyquestion2');
         }
@@ -65,15 +73,15 @@ class SurveyController extends AbstractController
         $id = $user->getId();
         $em = $this->getDoctrine();
 
-        $question2 = $em->getRepository(User::class)->find($id);
+        $user = $em->getRepository(User::class)->findOneById($id);
 
-        $form = $this->createForm(Survey2Type::class, $question2);
+        $form = $this->createForm(Survey4Type::class, $user);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
         {
-            $em = $this->getDoctrine()->getManager();
-            $em->flush();
+
+            $em->getManager()->flush();
 
             return $this->redirect($this->generateUrl('surveyquestion3'));
         }
@@ -95,7 +103,7 @@ class SurveyController extends AbstractController
 
         $question3 = $em->getRepository(User::class)->find($id);
 
-        $form = $this->createForm(Survey2Type::class, $question3);
+        $form = $this->createForm(Survey5Type::class, $question3);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
@@ -124,7 +132,7 @@ class SurveyController extends AbstractController
 
         $question4 = $em->getRepository(User::class)->find($id);
 
-        $form = $this->createForm(Survey2Type::class, $question4);
+        $form = $this->createForm(Survey6Type::class, $question4);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
@@ -153,7 +161,7 @@ class SurveyController extends AbstractController
 
         $question5 = $em->getRepository(User::class)->find($id);
 
-        $form = $this->createForm(Survey2Type::class, $question5);
+        $form = $this->createForm(Survey7Type::class, $question5);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
@@ -161,7 +169,7 @@ class SurveyController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('surveyquestion4'));
+            return $this->redirect($this->generateUrl('surveyquestion6'));
         }
 
         return $this->render('/survey/question5.html.twig', [
@@ -181,7 +189,7 @@ class SurveyController extends AbstractController
 
         $question6 = $em->getRepository(User::class)->find($id);
 
-        $form = $this->createForm(Survey2Type::class, $question6);
+        $form = $this->createForm(Survey8Type::class, $question6);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
@@ -189,7 +197,7 @@ class SurveyController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('surveyquestion5'));
+            return $this->redirect($this->generateUrl('surveyquestion7'));
         }
 
         return $this->render('/survey/question6.html.twig', [
@@ -209,7 +217,7 @@ class SurveyController extends AbstractController
 
         $question7 = $em->getRepository(User::class)->find($id);
 
-        $form = $this->createForm(Survey2Type::class, $question7);
+        $form = $this->createForm(Survey9Type::class, $question7);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
@@ -217,7 +225,7 @@ class SurveyController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('surveyquestion6'));
+            return $this->redirect($this->generateUrl('surveyquestion8'));
         }
 
         return $this->render('/survey/question7.html.twig', [
@@ -236,8 +244,8 @@ class SurveyController extends AbstractController
         $em = $this->getDoctrine();
 
         $question8 = $em->getRepository(User::class)->find($id);
-
-        $form = $this->createForm(Survey2Type::class, $question8);
+        
+        $form = $this->createForm(Survey10Type::class, $question8);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
@@ -245,7 +253,7 @@ class SurveyController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('surveyquestion7'));
+            return $this->redirect($this->generateUrl('surveyquestion9'));
         }
 
         return $this->render('/survey/question8.html.twig', [
@@ -265,7 +273,7 @@ class SurveyController extends AbstractController
 
         $question9 = $em->getRepository(User::class)->find($id);
 
-        $form = $this->createForm(Survey2Type::class, $question9);
+        $form = $this->createForm(Survey11Type::class, $question9);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
@@ -273,7 +281,7 @@ class SurveyController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('surveyquestion8'));
+            return $this->redirect($this->generateUrl('surveyquestion10'));
         }
 
         return $this->render('/survey/question9.html.twig', [
@@ -293,7 +301,7 @@ class SurveyController extends AbstractController
 
         $question10 = $em->getRepository(User::class)->find($id);
 
-        $form = $this->createForm(Survey2Type::class, $question10);
+        $form = $this->createForm(Survey12Type::class, $question10);
         $form->handleRequest($request); 
 
         if($form->isSubmitted() && $form->isValid())
