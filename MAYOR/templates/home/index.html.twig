@@ -2,19 +2,577 @@
 
 {% block title %}Hello HomeController!{% endblock %}
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+{% block stylesheets %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/adrien/Desktop/Serveur_Mamp/MAYOR/START-UP-NATION/MAYOR/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/adrien/Desktop/Serveur_Mamp/MAYOR/START-UP-NATION/MAYOR/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
 {% endblock %}
+
+
+{% block body %}
+    <header>      
+        <div>
+            <!-- container header -->
+
+            <div class=" container col-lg-10">
+                <h1>
+                    Compléter<br>le questionnaire
+                </h1>
+
+                <a class="btn btn-warning col-lg-2" href="questionnaire.html">Commencer</a>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+                            <!-- start carousel -->
+                           
+        
+                            <!-- fin carousel -->
+
+        <section class="section section-paysages">
+            <div class="container-fluid">
+                <h2 class="gold-line-left gold-line-right"><span>Des paysages grandioses et spectaculaires</span></h2>
+            </div>
+
+            <div class="container">
+                <div class="row text-section-center">
+                    <div class="col-8 offset-2">
+                        <h4>Nous avons déniché ces lieux qui pourraient vous inspirer pour créer votre
+                            voyage...</h4>
+                    </div>
+                </div>
+
+                <!-- CARDS / -->
+
+                <div class=" row section-cards" data-flickity-options='{"wrapAround":true}'>
+
+                    <div class=" col-4 ">
+                        <div class="zoom-effect">
+                            <img src=" /style/images/Card1.1.jpg">
+                        </div>
+                        <div class="card-body">
+                            <h3>Algrave</h3>
+                            <p class="card-text">Les magnifiques paysages de la côté sud du Portugal.
+                            </p>
+                            <a class="page" href="fichevoyage.html">Voir plus</a>
+                        </div>
+                    </div>
+
+                    <div class=" col-4">
+                        <div class=" zoom-effect">
+                            <img src=" /style/images/Card1.2.jpg">
+                        </div>
+                        <div class="card-body">
+                            <h3>Suisse</h3>
+                            <p class="card-text">Venez arpenter les montagnes dans le calme de la Suisse.
+                            </p>
+                            <a class="page" href="fichevoyage.html">Voir plus</a>
+                        </div>
+                    </div>
+
+                    <div class=" col-4">
+                        <div class="zoom-effect">
+                            <img src=" /style/images/Card1.3.jpg">
+                        </div>
+                        <div class="card-body">
+                            <h3>Ireland road trip</h3>
+                            <p class="card-text">Les paysages luxurieux d'Irlande n'attendent plus que vous.
+                            </p>
+                            <a class="page" href="fichevoyage.html">Voir plus</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- CARDS / -->
+            </div>
+
+
+        </section>
+
+
+        <!--  /*****************************************
+           SECTION SPECIALISTES 2
+        *****************************************/ -->
+
+        <section class="section section-specialistes">
+
+            <div class="container">
+
+                <div class="row">
+                    <div class=" col-lg-6">
+                        <div class="h2specialiste ">
+                            <h2 class="gold-line-right"><span>Des spécialistes locaux</span></h2>
+                            <h4 class="p-section-specialistes"> Ces voyageurs expérimentés ont fait des voyages qui
+                                pourraient bien vous intéresser.</h4>
+                            <h6>Les profils soumis aux critères de voyage proche des votres...</h6>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-6 col-lg-3">
+                        <div class="card2">
+                            <div class="zoom-effect">
+                                <img src="/style/images/Billy.jpg" class="card-img-top" alt="image Christina Paredes">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Billy Bob</h5>
+                                </p>
+                                <a href="profil.html" class="btn btn-primary">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="card2">
+                            <div class="zoom-effect">
+                                <img src="/style/images/Christina.jpg" class="card-img-top" alt="image Christina Paredes">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Christina Paredes</h5>
+                                </p><a href="profil.html" class="btn btn-primary">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!--  /*****************************************
+    SECTION RESTAURANTS 3
+    *****************************************/ -->
+
+
+        <section class="section section-restaurants">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="text-section-center">
+                            <h2 class="gold-line-left gold-line-right"><span>Des restaurants uniques</span></h2>
+                            <h4>Nous avons sélectionné pour vous les restaurants qui vous plairont à coup sûr !</h4>
+                        </div>
+                    </div>
+
+                    <div class="row section-cards">
+                        <div class="col-4">
+                            <div class="zoom-effect">
+                                <img src="/style/images/Pizza.jpg">
+                            </div>
+                            <div class="card-body">
+                                <h3>Tacos</h3>
+                                <p class="card-text">Spécialité mexicaine pleine de saveurs.
+                                </p>
+                                <a class="page" href="fichevoyage.html">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="zoom-effect">
+                                <img src="/style/images/Tiramisu.jpg">
+                            </div>
+                            <div class="card-body">
+                                <h3>Mezze Food</h3>
+                                <p class="card-text">Plat Méditéranéen à partager.
+                                </p>
+                                <a class="page" href="fichevoyage.html">Voir plus</a>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="zoom-effect">
+                                <img src="/style/images/Pasta.jpg">
+                            </div>
+                            <div class="card-body">
+                                <h3>Pasta</h3>
+                                <p class="card-text">Un classique indémodable de l'Italie.
+                                </p>
+                                <a class="page" href="fichevoyage.html">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  /*****************************************
+    SECTION CONSEILS 4
+    *****************************************/ -->
+
+        <section class="section section-conseils">
+            <div class="container">
+
+
+
+                <!-- <div class="row">
+                    <div class="col-lg-6 red">AAA</div>
+                    <div class="col-lg-6 blue">
+                        <div class="row">
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4 blue">A</div>
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4 green">A</div>
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4 orange">A</div>
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4 green">A</div>
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4 orange">A</div>
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4 blue">A</div>
+                        </div>
+
+
+                    </div>
+                </div> -->
+
+
+
+                <div class="row">
+
+                    <div class="col-11-offset-1 col-lg-8">
+                        <h2 class="gold-line-right"><span>Des conseils voyages sur mesure</span></h2>
+                    </div>
+
+
+                    <div class="col-12 col-lg-6">
+
+
+                        <h4 class="col-10-offset-1 col-lg-11"> Selon vos réponses au questionnaire de personnalisation,
+                            nous vous proposerons des expériences qui vous correspondent pour organiser au mieux votre trip.<h4>
+
+
+
+                                <img src="/style/images/Voyage.jpg" class="col-sm-12 col-lg-11 " alt="image matos">
+
+                    </div>
+
+
+                    <div class="col-12 col-lg-6 group-pastille">
+                        <!-- PASTILLE -->
+
+                        <div class="row">
+
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
+                                <h3>Budget</h3>
+                                <p>500€</p>
+
+                                <svg width="90" height="90" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60" cy="60" r="58.75" fill="white" />
+                                    <circle cx="60" cy="60" r="58.75" stroke="#1A1A37" stroke-width="2.5" />
+                                    <circle cx="60" cy="60" r="58.75" stroke="#C2B286" stroke-width="2.5" />
+                                    <path
+                                        d="M60.7792 37.4026C47.8699 37.4026 37.4026 47.8699 37.4026 60.7792C37.4026 73.6885 47.8699 84.1558 60.7792 84.1558C73.6885 84.1558 84.1558 73.6885 84.1558 60.7792C84.1558 47.8699 73.6885 37.4026 60.7792 37.4026ZM60.7792 80.1902C50.0614 80.1902 41.3683 71.497 41.3683 60.7792C41.3683 50.0614 50.0614 41.3683 60.7792 41.3683C71.497 41.3683 80.1902 50.0614 80.1902 60.7792C80.1902 71.497 71.497 80.1902 60.7792 80.1902ZM66.9208 49.477C66.0911 49.2944 65.1258 49.1953 64.0352 49.1953C58.4676 49.1953 54.7002 52.1017 53.6723 57.017H52.013C51.7834 57.017 51.5955 57.2049 51.5955 57.4345V58.8538C51.5955 59.0834 51.7834 59.2712 52.013 59.2712H53.3905C53.3749 59.4851 53.3749 59.7095 53.3749 59.9391V61.8646H52.013C51.7834 61.8646 51.5955 62.0524 51.5955 62.282V63.7013C51.5955 63.9309 51.7834 64.1187 52.013 64.1187H53.5888C54.4863 69.295 58.3059 72.3632 64.0352 72.3632C65.1258 72.3632 66.0911 72.2745 66.9208 72.097C67.1139 72.0553 67.2547 71.8883 67.2547 71.69V69.4567C67.2547 69.1958 67.0147 68.9976 66.759 69.0497C65.992 69.1958 65.0945 69.2637 64.0561 69.2637C60.4818 69.2637 58.0815 67.3539 57.2832 64.1187H64.0979C64.3274 64.1187 64.5153 63.9309 64.5153 63.7013V62.282C64.5153 62.0524 64.3274 61.8646 64.0979 61.8646H56.9805V59.9861C56.9805 59.7408 56.9805 59.4956 56.9962 59.266H64.0874C64.317 59.266 64.5049 59.0781 64.5049 58.8486V57.4293C64.5049 57.1997 64.317 57.0118 64.0874 57.0118H57.3927C58.2902 54.0428 60.6435 52.2948 64.0509 52.2948C65.0893 52.2948 65.9868 52.373 66.7486 52.5243C66.8091 52.5367 66.8716 52.5355 66.9315 52.5208C66.9915 52.5061 67.0474 52.4782 67.0953 52.4393C67.1432 52.4004 67.1819 52.3513 67.2086 52.2956C67.2352 52.24 67.2492 52.1791 67.2495 52.1173V49.884C67.2495 49.6858 67.1139 49.5188 66.9208 49.477Z"
+                                        fill="black" />
+                                </svg>
+
+                            </div>
+
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
+                                <h3>Durée</h3>
+                                <p>3-6 mois</p>
+
+                                <svg width="90" height="90" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60" cy="60" r="58.75" fill="white" />
+                                    <circle cx="60" cy="60" r="58.75" stroke="#1A1A37" stroke-width="2.5" />
+                                    <circle cx="60" cy="60" r="58.75" stroke="#C2B286" stroke-width="2.5" />
+                                    <path
+                                        d="M60.7792 37.4026C73.6897 37.4026 84.1558 47.8687 84.1558 60.7792C84.1558 73.6897 73.6897 84.1558 60.7792 84.1558C47.8687 84.1558 37.4026 73.6897 37.4026 60.7792C37.4026 47.8687 47.8687 37.4026 60.7792 37.4026ZM60.7792 42.0779C50.4508 42.0779 42.0779 50.4508 42.0779 60.7792C42.0779 71.1077 50.4508 79.4805 60.7792 79.4805C71.1077 79.4805 79.4805 71.1077 79.4805 60.7792C79.4805 50.4508 71.1077 42.0779 60.7792 42.0779ZM60.7792 46.7532C61.9781 46.7532 62.9661 47.6557 63.1012 48.8183L63.1169 49.0909V59.811L69.4452 66.1392C70.358 67.0521 70.358 68.5323 69.4452 69.4452C68.6025 70.2878 67.2765 70.3526 66.3595 69.6396L66.1392 69.4452L59.1263 62.4322C58.761 62.0669 58.529 61.5931 58.4618 61.0865L58.4415 60.7792V49.0909C58.4415 47.7999 59.4881 46.7532 60.7792 46.7532Z"
+                                        fill="black" />
+                                </svg>
+
+                            </div>
+
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
+                                <h3>Cuisine</h3>
+                                <p>Italienne</p>
+
+                                <svg width="90" height="90" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60" cy="60" r="58.75" fill="white" />
+                                    <circle cx="60" cy="60" r="58.75" stroke="#1A1A37" stroke-width="2.5" />
+                                    <circle cx="60" cy="60" r="58.75" stroke="#C2B286" stroke-width="2.5" />
+                                    <path
+                                        d="M32.7273 52.2078H79.4805M49.0909 38.1818V42.8571M60.7792 35.8441V42.8571M72.4676 38.1818V42.8571M77.1429 70.909V52.2078H44.4156V70.909C44.4156 72.769 45.1545 74.5528 46.4697 75.868C47.7849 77.1832 49.5686 77.922 51.4286 77.922H70.1299C71.9899 77.922 73.7736 77.1832 75.0888 75.868C76.404 74.5528 77.1429 72.769 77.1429 70.909Z"
+                                        stroke="black" stroke-width="4" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+
+
+                            </div>
+                        
+
+                        
+
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
+                                <h3>Voyageur</h3>
+                                <p>Aventurier</p>
+
+                                <svg width="90" height="90" viewBox="0 0 120 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60" cy="60" r="58.75" fill="white" />
+                                    <circle cx="60" cy="60" r="58.75" stroke="#1A1A37" stroke-width="2.5" />
+                                    <circle cx="60" cy="60" r="58.75" stroke="#C2B286" stroke-width="2.5" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M62.4193 32.111C64.06 30.1421 67.2586 31.488 66.9979 34.0376L65.1658 51.9513H79.9956C82.1972 51.9513 83.4001 54.5192 81.9905 56.2105L56.022 87.3727C54.3813 89.3416 51.1829 87.9957 51.4436 85.4461L53.2757 67.5325H38.4459C36.2442 67.5325 35.0415 64.9645 36.451 63.2732L62.4193 32.111ZM43.9903 62.3388H57.8772C58.4927 62.3388 58.9733 62.8709 58.9107 63.483L57.4755 77.5159L74.4511 57.1452H60.5642C59.9487 57.1452 59.468 56.6128 59.5309 56.0007L60.9659 41.968L43.9903 62.3388Z"
+                                        fill="black" />
+                                </svg>
+
+                            </div>
+
+
+                            <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
+                                <h3>Confort</h3>
+                                <p>Hôtel</p>
+                                <svg width="90" height="90" viewBox="0 0 121 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60.5" cy="60" r="58.75" fill="white" />
+                                    <circle cx="60.5" cy="60" r="58.75" stroke="#1A1A37" stroke-width="2.5" />
+                                    <circle cx="60.5" cy="60" r="58.75" stroke="#C2B286" stroke-width="2.5" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M45.247 38.0904C45.7948 37.1733 47.1534 37.1733 47.7011 38.0904L50.8761 43.4069L57.0418 44.709C58.1054 44.9337 58.5252 46.1938 57.8001 46.9853L53.5968 51.5731L54.2323 57.6943C54.3419 58.7503 53.2428 59.5291 52.2469 59.1011L46.4741 56.6201L40.7012 59.1011C39.7053 59.5291 38.6062 58.7503 38.7159 57.6943L39.3513 51.5731L35.148 46.9853C34.4229 46.1938 34.8427 44.9337 35.9064 44.709L42.072 43.4069L45.247 38.0904ZM46.4741 40.4384L43.8462 44.8385C43.6456 45.1745 43.3094 45.4127 42.9198 45.495L37.8168 46.5727L41.2957 50.3699C41.5613 50.6597 41.6897 51.0452 41.6496 51.432L41.1236 56.4981L45.9014 54.4448C46.2663 54.288 46.6819 54.288 47.0466 54.4448L51.8245 56.4981L51.2986 51.432C51.2584 51.0452 51.3869 50.6597 51.6524 50.3699L55.1313 46.5727L50.0283 45.495C49.6387 45.4127 49.3026 45.1745 49.1018 44.8385L46.4741 40.4384Z"
+                                        fill="black" stroke="black" stroke-width="0.5" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M74.8573 38.0904C75.4051 37.1733 76.7637 37.1733 77.3114 38.0904L80.4865 43.4069L86.6521 44.709C87.7157 44.9337 88.1356 46.1938 87.4105 46.9853L83.2071 51.5731L83.8426 57.6943C83.9522 58.7503 82.8532 59.5291 81.8573 59.1011L76.0844 56.6201L70.3116 59.1011C69.3157 59.5291 68.2166 58.7503 68.3262 57.6943L68.9617 51.5731L64.7584 46.9853C64.0333 46.1938 64.4531 44.9337 65.5167 44.709L71.6823 43.4069L74.8573 38.0904ZM76.0844 40.4384L73.4566 44.8385C73.256 45.1745 72.9197 45.4127 72.5301 45.495L67.4272 46.5727L70.906 50.3699C71.1716 50.6597 71.3001 51.0452 71.2599 51.432L70.734 56.4981L75.5118 54.4448C75.8767 54.288 76.2922 54.288 76.657 54.4448L81.4349 56.4981L80.9089 51.432C80.8687 51.0452 80.9972 50.6597 81.2628 50.3699L84.7416 46.5727L79.6387 45.495C79.249 45.4127 78.9129 45.1745 78.7122 44.8385L76.0844 40.4384Z"
+                                        fill="black" stroke="black" stroke-width="0.5" />
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M59.2729 59.9087C59.8206 58.9915 61.1793 58.9915 61.7269 59.9087L64.902 65.2251L71.0676 66.5273C72.1313 66.7519 72.5511 68.012 71.826 68.8035L67.6227 73.3914L68.2581 79.5126C68.3678 80.5685 67.2687 81.3474 66.2728 80.9194L60.5 78.4384L54.7271 80.9194C53.7312 81.3474 52.6321 80.5685 52.7417 79.5126L53.3772 73.3914L49.1739 68.8035C48.4488 68.012 48.8686 66.7519 49.9322 66.5273L56.0979 65.2251L59.2729 59.9087ZM60.5 62.2566L57.8721 66.6567C57.6715 66.9927 57.3353 67.231 56.9456 67.3132L51.8427 68.3909L55.3215 72.1881C55.5872 72.4779 55.7156 72.8635 55.6754 73.2502L55.1495 78.3164L59.9273 76.263C60.2922 76.1063 60.7077 76.1063 61.0725 76.263L65.8504 78.3164L65.3245 73.2502C65.2843 72.8635 65.4127 72.4779 65.6783 72.1881L69.1572 68.3909L64.0542 67.3132C63.6646 67.231 63.3284 66.9927 63.1277 66.6567L60.5 62.2566Z"
+                                        fill="black" stroke="black" stroke-width="0.5" />
+                                </svg>
+
+                            </div>
+
+                            <div class=" offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
+                                <h3>Transport</h3>
+                                <p>Voiture</p>
+                                <svg width="90" height="90" viewBox="0 0 121 120" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="60.5" cy="60" r="58.75" fill="white" />
+                                    <circle cx="60.5" cy="60" r="58.75" stroke="#1A1A37" stroke-width="2.5" />
+                                    <circle cx="60.5" cy="60" r="58.75" stroke="#C2B286" stroke-width="2.5" />
+                                    <path
+                                        d="M81.7852 53.3517L78.5873 43.7556C78.1234 42.3588 77.2311 41.1437 76.0371 40.283C74.8432 39.4223 73.4084 38.9598 71.9366 38.9611H50.6218C49.15 38.9598 47.7152 39.4223 46.5213 40.283C45.3274 41.1437 44.4351 42.3588 43.9712 43.7556L40.7732 53.3517C39.9238 53.7082 39.1983 54.3073 38.6877 55.074C38.1771 55.8408 37.904 56.7411 37.9026 57.6624V69.3507C37.9026 71.1109 38.8914 72.6281 40.3314 73.4252C40.301 73.5795 40.2403 73.7198 40.2403 73.8811V78.7013C40.2403 79.3213 40.4865 79.9159 40.9249 80.3543C41.3633 80.7927 41.9579 81.039 42.5779 81.039H44.9156C45.5356 81.039 46.1302 80.7927 46.5686 80.3543C47.0069 79.9159 47.2532 79.3213 47.2532 78.7013V74.026H75.3052V78.7013C75.3052 79.3213 75.5515 79.9159 75.9899 80.3543C76.4283 80.7927 77.0229 81.039 77.6428 81.039H79.9805C80.6005 81.039 81.1951 80.7927 81.6335 80.3543C82.0719 79.9159 82.3182 79.3213 82.3182 78.7013V73.8811C82.3182 73.7198 82.2574 73.5772 82.227 73.4252C82.9596 73.0258 83.5715 72.437 83.9988 71.7202C84.4261 71.0034 84.653 70.1851 84.6558 69.3507V57.6624C84.6558 55.7244 83.4683 54.06 81.7852 53.3517ZM42.5779 69.3507V57.6624H79.9805L79.9852 69.3507H42.5779ZM50.6218 43.6364H71.9343C72.9418 43.6364 73.8348 44.2769 74.1527 45.2353L76.7382 52.987H45.8203L48.4034 45.2353C48.5585 44.7697 48.8562 44.3646 49.2544 44.0776C49.6526 43.7906 50.131 43.6363 50.6218 43.6364Z"
+                                        fill="black" />
+                                    <path
+                                        d="M48.4221 67.013C50.3587 67.013 51.9286 65.4431 51.9286 63.5065C51.9286 61.5699 50.3587 60 48.4221 60C46.4855 60 44.9156 61.5699 44.9156 63.5065C44.9156 65.4431 46.4855 67.013 48.4221 67.013Z"
+                                        fill="black" />
+                                    <path
+                                        d="M74.1364 67.013C76.0729 67.013 77.6428 65.4431 77.6428 63.5065C77.6428 61.5699 76.0729 60 74.1364 60C72.1998 60 70.6299 61.5699 70.6299 63.5065C70.6299 65.4431 72.1998 67.013 74.1364 67.013Z"
+                                        fill="black" />
+                                </svg>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <!--  /*****************************************
+    FIN SECTION CONSEILS 4
+    *****************************************/ -->
+
+
+        <!--  /*****************************************
+    DEBUT SECTION LIEUX 5
+    *****************************************/ -->
+
+        <section class=" section section-lieux">
+            <div class="container">
+
+                <div class="text-section-center">
+                    <h2 class="gold-line-left gold-line-right"><span>Des lieux grandioses</span></h2>
+                    <h4>Plusieurs logements ont été sélectionnés avec soin et qualité afin de répondre au mieux à vos
+                        besoins..</h4>
+                </div>
+
+                <div class="row section-cards">
+                    <div class="col-12 col-lg-4">
+                        <div class="zoom-effect">
+                            <img src="/style/images/Hotel1.png">
+                        </div>
+                        <div class="card-body">
+                            <h3>Mama Shetteler</h3>
+                            <p class="card-text">France.
+                            </p>
+                            <a class="page" href="fichevoyage.html">Voir plus</a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="zoom-effect">
+                            <img src="/style/images/Hotel2.png">
+                        </div>
+                        <div class="card-body">
+                            <h3>Zara Cave Hôtel</h3>
+                            <p class="card-text">Turquie.
+                            </p>
+                            <a class="page" href="fichevoyage.html">Voir plus</a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12 col-lg-4">
+                        <div class="zoom-effect">
+                            <img src="/style/images/Hotel3.png">
+                        </div>
+                        <div class="card-body">
+                            <h3>Portrait Roma</h3>
+                            <p class="card-text">Italie.
+                            </p>
+                            <a class="page" href="fichevoyage.html">Voir plus</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!--  /*****************************************
+          DEBUT ACTIVITES 6  
+          *****************************************/ -->
+
+        <section class="section section-activites">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+
+                        <a href="ficheactivites.html">
+                            <div class="cards-activites">
+                                <img src="/style/images/Activités8.jpg" class="img-fit h450 p-bottom zoom-effect" alt="">
+                                <h3>Randonnée </h3>
+                                <p class="card-text">Alpes</p>
+                            </div>
+                        </a>
+
+                        <a href="ficheactivites.html">
+                            <div class="cards-activites">
+                                <img src="/style/images/Activités2.jpg" class="img-fit h400 p-bottom" alt="">
+                                <h3>Dégustation de vin </h3>
+                                <p class="card-text">Espagne</p>
+                            </div>
+                        </a>
+
+                        <a href="ficheactivites.html">
+                            <div class="cards-activites">
+                                <img src="/style/images/Activités6.jpg" class="img-fit h450 p-bottom" alt="">
+                                <h3>Montgolfière </h3>
+                                <p class="card-text">Turquie</p>
+                            </div>
+                        </a>
+                    </div>
+
+
+                    <div class="col-12 col-lg-6">
+                        <div class="row">
+                            <div class="col-12 text-section-center">
+                                <h2 class="gold-line-left gold-line-right"><span>Des activités surprenantes</span></h2>
+                                <h4>Nous avons repéré une multitude d'activités et d'expériences à vivre aux quatre
+                                    coins du monde qui vous correspondent</h4>
+
+                                <a class="page" href="accueildestination.html">Voir plus</a>
+
+                            </div>
+                            <div class="col-6 col-lg-6">
+                                <a href="ficheactivites.html">
+                                    <div class="cards-activites">
+                                        <img src="/style/images/Activités7.jpg" class="img-fit h300 p-bottom" alt="">
+                                        <h3>Road trip </h3>
+                                        <p class="card-text">Norvège</p>
+                                    </div>
+                                </a>
+
+                                <a href="ficheactivites.html">
+                                    <div class="cards-activites">
+                                        <img src="/style/images/Activités5.jpg" class="img-fit h400 p-bottom" alt="">
+                                        <h3>Outdoor Adventure </h3>
+                                        <p class="card-text">Norvège</p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-lg-6">
+                                <a href="ficheactivites.html">
+                                    <div class="cards-activites">
+                                        <img src="/style/images/Activités9.jpg" class="img-fit h715 p-bottom" alt="">
+                                        <h3>Rafting </h3>
+                                        <p class="card-text">Mexique</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="col-6 col-lg-3">
+                        <a href="ficheactivites.html">
+                            <div class="cards-activites">
+                                <img src="/style/images/Activités3.jpg" class="img-fit h600 p-bottom" alt="">
+                                <h3>Découverte culinaires </h3>
+                                <p class="card-text">Portugal</p>
+                            </div>
+                        </a>
+
+                        <a href="ficheactivites.html">
+                            <div class="cards-activites">
+                                <img src="/style/images/Activités11.jpg" class="img-fit h300 p-bottom" alt="">
+                                <h3>Randonnée </h3>
+                                <p class="card-text">France</p>
+                            </div>
+                        </a>
+
+
+                        <a href="ficheactivites.html">
+                            <div class="cards-activites">
+                                <img src="/style/images/activités1.jpg" class="img-fit h400 p-bottom" alt="">
+                                <h3>Découverte culinaires </h3>
+                                <p class="card-text">Turquie</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!--  /*****************************************
+          DEBUT SECTION MAPS 7
+          *****************************************/ -->
+
+        <section class="section section-maps">
+
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-12">
+                        <div class="text-section-center">
+                            <h2 class="gold-line-left gold-line-right"><span>Enregistrer les meilleurs plans sur votre
+                                    map personnalisable</span></h2>
+
+                            <h4 class=p-section-maps>Notre outil innovant pour vous accompagner dans la conception et la
+                                préparation de votre voyage ou votre tour du monde.</h4>
+
+                            <a class="btn btn-warning col-lg-2" href="maps.html">Commencer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="maps">
+                <iframe class="maps"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d20988.19935616296!2d2.358199188967246!3d48.8863325637333!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b42c5006109d99%3A0xd53e4e155f0f81a3!2sFrance%20Vacances!5e0!3m2!1sfr!2sfr!4v1639489085503!5m2!1sfr!2sfr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+        </section>
+    </main>
+{% endblock  %}
