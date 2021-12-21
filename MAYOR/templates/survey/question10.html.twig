@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SurveyController!{% endblock %}
+
+{% block body %}
+<a href="{{path('surveyquestion9') }}" class="previous_question"> &#60  Retour</a>
+
+<section class="container_survey">
+        {{ form_start(form) }}
+        <p class="question_number">Question 10 sur 10</p>
+        <h1 class="Big_question">Écologie</h1>
+        <p class="small_question">Êtes-vous sensible à l'écologie ?</p>
+        {{ form_row(form._token) }}
+
+            <div class="range_global">
+                <div class="range_container">
+                {{ form_widget(form.environment)}}
+                </div>
+                <div class="range_text">
+                    <p>c'est quoi ?</p>
+                    <p>interessé</p>
+                    <p>impliqué</p>
+                </div>
+            </div>
+        <div class="question_button_center">
+        <button class="question_button">{{ button_label|default('Suivant')}} </button>
+        </div>
+        <a href="{{path('home') }}" class="plus_tard">Plus tard</a>
+        {{ form_end(form, {'render_rest': false} )}}
+</section>
+{% endblock %}
