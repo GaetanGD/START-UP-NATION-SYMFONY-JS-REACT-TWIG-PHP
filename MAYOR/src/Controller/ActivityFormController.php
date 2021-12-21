@@ -22,9 +22,23 @@ class ActivityFormController extends AbstractController
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted()){
+        if($form->isSubmitted()&& $form->isValid()){
 
-            $activity->setUserId();
+           # $activity->setUserId();
+
+           $someNewFilename = uniqid(); 
+
+            $directory = '../../public/uploads';
+
+            $file = $form['main_picture']->getData();
+            $extension = $file->guessExtension();
+
+            if (!$extension) {
+                $extension = 'bin';
+            }
+            $file->move($directory, $someNewFilename.'.'.$extension);
+
+            $activity->setMainPicture($someNewFilename.'.'.$extension);
 
             $em = $this->getDoctrine()->getManager();
 

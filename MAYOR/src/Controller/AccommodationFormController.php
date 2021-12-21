@@ -22,9 +22,23 @@ class AccommodationFormController extends AbstractController
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted()){
+        if($form->isSubmitted()&& $form->isValid()){
 
-            $accommodation->setUserId();
+            #$accommodation->setUserId();
+
+            $someNewFilename = uniqid(); 
+
+            $directory = '../../public/uploads';
+
+            $file = $form['main_picture']->getData();
+            $extension = $file->guessExtension();
+
+            if (!$extension) {
+                $extension = 'bin';
+            }
+            $file->move($directory, $someNewFilename.'.'.$extension);
+
+            $accommodation->setMainPicture($someNewFilename.'.'.$extension);
 
             $em = $this->getDoctrine()->getManager();
 
