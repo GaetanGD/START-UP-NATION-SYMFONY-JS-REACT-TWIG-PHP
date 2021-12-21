@@ -15,7 +15,7 @@ class Survey8Type extends AbstractType
     {
         $builder
         ->add('means_of_locomotion', ChoiceType::class, [
-            'attr' => ['class' => 'hidden_box'],
+            'attr' => ['class' => 'hidden2_box'],
             'choices'  => [
                 'A pied' => 'a_pied',
                 'A bicyclette' => 'a_bicyclette',

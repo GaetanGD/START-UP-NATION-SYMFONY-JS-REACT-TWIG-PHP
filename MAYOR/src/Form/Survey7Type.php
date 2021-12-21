@@ -17,7 +17,7 @@ class Survey7Type extends AbstractType
     {
         $builder
         ->add('geographical_area', ChoiceType::class, [
-            'attr' => ['class' => 'hidden_box'],
+            'attr' => ['class' => 'hidden2_box'],
             'choices'  => [
                 'Europe' => 'europe',
                 'Afrique' => 'afrique',
