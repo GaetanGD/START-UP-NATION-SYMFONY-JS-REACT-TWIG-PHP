@@ -24,6 +24,9 @@ class AccommodationFormController extends AbstractController
 
         if($form->isSubmitted()&& $form->isValid()){
 
+            $accommodation->setUserId($this->getUser());
+           $accommodation->setType(2);
+
             #$accommodation->setUserId();
 
             $someNewFilename = uniqid(); 

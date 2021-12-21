@@ -24,7 +24,8 @@ class ActivityFormController extends AbstractController
 
         if($form->isSubmitted()&& $form->isValid()){
 
-           # $activity->setUserId();
+           $activity->setUserId($this->getUser());
+           $activity->setType(1);
 
            $someNewFilename = uniqid(); 
 

@@ -25,6 +25,9 @@ class RestaurantFormController extends AbstractController
 
         if($form->isSubmitted()&& $form->isValid()){
 
+            $restaurant->setUserId($this->getUser());
+            $restaurant->setType(3);
+
             $someNewFilename = uniqid(); 
 
             $directory = '../../public/uploads';
