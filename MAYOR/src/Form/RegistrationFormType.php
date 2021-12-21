@@ -11,6 +11,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Doctrine\ORM\EntityRepository;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType; #Ajout de la ligne 14 15 a voir avec cecile.
 
 class RegistrationFormType extends AbstractType
 {
@@ -43,6 +45,11 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
+            ->add('firstname')
+            ->add('lastname')
+            ->add('newsletter')
+           
+
         ;
     }
 

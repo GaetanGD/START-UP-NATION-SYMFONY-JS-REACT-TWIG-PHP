@@ -45,6 +45,11 @@ class Travel
      */
     private $pictures;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $advice;
+
     public function __construct()
     {
         $this->activity = new ArrayCollection();
@@ -142,6 +147,18 @@ class Travel
                 $picture->setTravel(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getAdvice(): ?string
+    {
+        return $this->advice;
+    }
+
+    public function setAdvice(?string $advice): self
+    {
+        $this->advice = $advice;
 
         return $this;
     }
