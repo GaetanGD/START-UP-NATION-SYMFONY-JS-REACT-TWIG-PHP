@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VoyageFormController!{% endblock %}
+
+{% block body %}
+<h1>Mon voyage</h1>
+<a href="example.com">Activité</a>
+<a href="example.com">Restauration</a>
+<a href="example.com">Hébergement</a>
+<a href="example.com">Destination</a>
+    {{ form_start(VoyageForm) }}
+
+       {{ form_row(VoyageForm.name)}}
+       {{ form_row(VoyageForm.main_picture)}}
+       {{ form_row(VoyageForm.transport)}}
+       {{ form_row(VoyageForm.weather_report)}}
+       {{ form_row(VoyageForm.price)}}
+       {{ form_row(VoyageForm.equipment)}}
+       {{ form_row(VoyageForm.description)}}
+
+    <section>
+        <h2>Mon top restaurations</h2>
+        <p>Quels sont vos bon plan culinaire ?</p>
+            <div>
+                <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Voir</a>
+                    <a href="#" class="btn btn-primary">Supprimer</a>
+                </div>
+                </div>
+            <div>
+        <a href="example.com">Ajouter</a>
+    </section>
+
+    <section>
+        <h2>Mon top activités</h2>
+        <p>Quelles sont les activité à faire ?</p>
+            <div>
+                <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Voir</a>
+                    <a href="#" class="btn btn-primary">Supprimer</a>
+                </div>
+                </div>
+            <div>
+        <a href="example.com">Ajouter</a>
+    </section>
+
+    <section>
+        <h2>Mon top hébergements</h2>
+        <p>Où dormir ?</p>
+            <div>
+                <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Voir</a>
+                    <a href="#" class="btn btn-primary">Supprimer</a>
+                </div>
+                </div>
+            <div>
+        <a href="example.com">Ajouter</a>
+    </section>
+
+       {{ form_row(VoyageForm.advice)}}
+        <button> {{button_label|default('Valider')}}</button>
+    {{ form_end(VoyageForm) }}
+{% endblock %}
