@@ -378,3 +378,801 @@ background: linear-gradient(90.1deg, #FFFCF7 18.7%, rgba(255, 252, 247, 0.9035) 
     justify-content: space-around;
     flex-wrap: nowrap;
 }
+
+/*NEW CSS*/
+
+html{
+    font-size: 62.5%;
+} 
+
+@media (max-width: 800px){
+    html{
+        font-size: 40%;
+    }
+}
+
+
+@font-face {
+    font-family: "oceanwide";
+    font-style: normal;
+    font-weight: 400;
+    src: url(../font/OceanwideSemibold.otf);
+}
+@font-face {
+    font-family: "oceanwide";
+    font-style: normal;
+    font-weight: 200;
+    src: url(../font/OceanwideSemibold.otf);
+}
+
+@font-face {
+    font-family: "oceanwide";
+    font-style: normal;
+    font-weight: 700;
+    src: url(../font/OceanwideSemibold.otf);
+}
+
+.img-force-fluid{
+    width: 100%;
+}
+
+.img-cover-fluid{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+#must{
+    background-color: #158c56;
+  }
+  
+  #must h2{
+    text-align: center;
+    font-size: 8rem;
+    margin-bottom: 60px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+  }
+  
+  #must .wrapper{
+    max-height: 400px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  #must .wrapper::-webkit-scrollbar {
+    display: inline;
+  
+  }
+  
+  
+
+/*****************************************
+CSS COMMUN START
+*****************************************/
+
+h2 {
+    width: 100%; 
+    /*border-bottom: 2px solid #C2B286; */
+    margin: 10px 0 20px; 
+    text-align: center;
+    font-style: normal;
+    font-size: 4rem;
+    font-weight:400;
+    color: #C2B286;
+    padding-top: 50px;
+    font-family: "oceanwide";
+    
+}
+
+span  {
+    z-index: 0;
+    
+}
+
+.titre-left{
+    text-align: left;
+}
+
+ h2.gold-line-left span,
+ h2.gold-line-right span {
+     position:relative; 
+     
+ }
+
+
+ h2.gold-line-left span::before,
+ h2.gold-line-right span::after{
+    content: "";
+    position: absolute;
+    top:calc(50% - 1px);
+    height: 2px;
+    background-color: #C2B286;
+ }
+ 
+h2.gold-line-left span::before {
+    right:100%;
+    left:-2000px;
+    
+ }
+h2.gold-line-right span::after {
+    right:-2000px;
+    left:100%; 
+ }
+
+h3{
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+h4{
+    color: #3D3E41;
+    font-family: helbetica -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2.0rem;
+    font-weight: 300;
+}
+
+h6{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding-top: 32px;
+    color: rgb(148, 147, 145);
+
+}
+
+p{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.8rem;
+}
+
+/* img{
+box-shadow: 1px 3px 15px 1px rgba(9, 9, 9, 0.358); ;
+} */
+
+
+.section {
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.text-section-center{ /* alignement des textes sur les sections: restautrants, lieux, activites, maps */
+    text-align: center;
+    padding-bottom: 70px;
+}
+.card{
+    background-color:rgba(0,0,0,0);
+    border-style: none;
+}
+
+.card-text{
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+font-size: 1.8rem;
+font-weight: 300;
+
+}
+
+a.page {
+    color: rgba(129, 109, 101, 1);
+    font-size: 1.4rem;
+    font-family: helvetica -apple-system, BlinkMacSystemFont,'Helvetica Neue', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
+    font-weight: normal;
+}
+
+.btn-warning{
+    color: #3D3E41;
+    box-shadow: 0px 5px 20px 0px #00000026;
+    background-color: #FACE32;
+    padding: 10px;
+    border-radius: 5px;
+    padding: 15px 10px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold ;
+    font-size: 1.8rem;
+}
+
+.btn-warning:hover{
+    background-color: #eec32d;
+}
+
+.btn-primary{
+    color: #3D3E41;
+    box-shadow: 0px 5px 20px 0px #00000026;
+    background-color: #FACE32;
+    padding: 10px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold ;
+    font-size: 1.6rem;
+    border: none;
+}
+
+/*****************************************
+CSS COMMUN FIN
+*****************************************/
+
+
+/*****************************************
+CSS HEADER PAGE HOME
+*****************************************/
+
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.fond-nav{
+    background-image: linear-gradient(rgba(43, 27, 38, 0.5), rgba(0, 0, 0, 0.5));
+    padding-bottom: 20px;
+}
+
+header{ 
+    background-image: linear-gradient(rgba(43, 27, 38, 0.4), rgba(0, 0, 0, 0.4)), url(/img/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 85% 53%;
+    padding-bottom: 200px;
+}
+
+
+.page{ /* lien nav */
+    color: black;
+    margin-right: 20px;
+}
+
+#logo{
+    width: 60px;
+}
+
+
+nav .btn {
+    border-radius: 65px;
+    padding: 0.8rem;
+}
+
+nav .nav-item{
+font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+font-weight: lighter;
+font-size: 1.8rem;
+}
+
+.search-bar .form-control{
+    background-color: white;
+    border-radius: 3rem;
+    border: none;
+    
+    font-size: 15px;
+    
+}
+.search-bar form{
+    position:relative;
+    
+}
+.search-bar form::after {
+    content: "";
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    min-width: 26px;
+    min-height: 26px;
+    right:.5vw;
+    top:.5vw;
+    
+    background: url('/img/search.svg');
+    background-size: cover;
+}
+.search-bar .form-control{
+    height: 4vw;
+    min-height: 32px;
+    
+}
+/* .search-icons{
+    background-color: white;
+    border-radius: 0 3rem 3rem 0 ;
+    /* margin-left: -50px; */
+
+
+
+
+header h1{
+    font-family: "oceanwide";
+    color: white;
+    margin: 0px;
+    padding-top: 350px;
+    font-weight: 400;
+    font-size: 6rem;
+    line-height: 7rem;
+    padding-bottom: 50px;
+}
+
+
+
+/*****************************************
+CSS MAIN PAGE HOME
+*****************************************/
+
+/*****************************************
+SECTION PAYSAGES PAGE HOME
+*****************************************/
+/* Carousel start*/
+
+.slider{
+    position: relative;
+    z-index: 0;
+}
+
+.btn-slider{
+    color: #C2B286;    
+    background-color: #F8F5EF ;
+    width: 2.5vw;
+    height: 2.5vw;
+    box-shadow:0px 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    min-width: 26px;
+    min-height: 26px; 
+}
+
+.boutonslider{
+    position: absolute;
+    top: 53%;
+    z-index: 30;
+}
+
+.boutonslider .droite{
+    margin-left: 86.333%;
+}
+
+/* Carousel end */
+
+.section-paysages {
+    padding-top: 70px;
+    padding-bottom: 90px;
+    background-color: #F8F5EF;
+    position: relative;
+}
+.section-paysages span{
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.text{
+    text-align: center;
+}
+#image-conseils{
+    width: 50%;
+    height: 50vw;
+}
+
+
+.section-cards img {
+    width: 100%;
+    height: 25vw;    
+    object-fit: cover;
+}
+/*****************************************
+SECTION SPECIALISTES PAGE HOME
+*****************************************/
+
+.section-specialistes{
+    background-color: #FFFBF4 ;
+    padding-bottom: 90px;
+}
+
+.section-specialistes h2{
+    text-align: start;
+
+}
+.section-specialistes span {
+    padding-right: 50px;
+}
+
+.section-specialistes .card-img-top{
+    position: relative;
+    z-index: 40;
+}
+
+span::after {
+    position: relative;
+
+    z-index: 0;
+}
+
+.h2specialiste{
+    padding-top: 130px;
+}
+
+.p-section-specialistes{
+    width: 520px;
+}
+
+.cardspecialiste{
+    background-image: url(../img/Billy.jpg);
+    background-size: 150px;
+    background-repeat: no-repeat;
+}
+
+.card-img-top{
+    position : relative;
+    z-index: 0;
+}
+
+.section-specialistes .card-body{
+    margin-top: -100px;
+    margin-bottom: 5px;
+    position : relative;
+    z-index: 40;
+}
+
+.card-body h5{
+    color: rgba(255, 251, 244, 1);
+    font-size: 2.4rem;
+    font-weight: 300;
+
+}
+
+/*****************************************
+SECTION RESTAURANTS PAGE HOME
+*****************************************/
+
+.section-restaurants{
+    background-color: #F8F5EF;
+    padding-bottom: 100px;
+}
+.section-restaurants span{
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+
+
+/*****************************************
+    SECTION CONSEILS PAGE HOME
+*****************************************/
+
+.section-conseils{
+    background-color: #FFFBF4 ;
+    padding-bottom: 90px;
+    padding-top: 20px;
+}
+.section-conseils span {
+    padding-right: 50px;
+}
+
+.section-conseils h2{
+    text-align: start;
+}
+
+.section-conseils img{
+    margin-right: 50px;
+    height: 20vw;
+    object-fit: cover;
+
+}
+.section-conseils h4{ /*text sous-titre  */
+    padding-bottom: 35px;
+}
+.section-conseils h3 { /* titre pastille */
+    font-size: 1.8rem;
+    padding-bottom:10px;
+}
+.group-pastille svg {
+    margin-bottom: 60px;
+}
+.group-pastille{
+    padding-top: 50px;
+    text-align: center;
+}
+
+/*****************************************
+    SECTION LIEUX PAGE HOME
+*****************************************/
+
+.section-lieux{
+    background-color: #F8F5EF;
+    padding-bottom: 90px;
+}
+.section-lieux span{
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.card-img-section-lieux{
+    padding-top: 40px;
+}
+
+.card-body-section-lieux{
+    padding-top: 20px;
+}
+
+/*****************************************
+    SECTION ACTIVITES PAGE HOME
+*****************************************/
+
+.section-activites{
+    background-color: #FFFBF4;
+    padding: 150px;
+}
+.section-activites span{
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.section-activites img{
+    position: relative;
+    z-index: 10;
+}
+
+.section-activites h4{
+padding-bottom: 28px;
+margin:0px
+}
+
+span::after {
+    position: relative;
+    z-index: 0;
+}
+.cards-activites{
+    margin-bottom:7.5px ;
+    margin-top: 7.5px;  
+}
+
+.cards-activites h3 {
+    position: absolute;
+    margin-top: -80px;
+    padding-left: 2.0rem;
+    color : white;
+    line-height: 35px;   
+    z-index: 20;
+}
+.cards-activites p {
+    position: absolute;
+    margin-top: -50px;
+    padding-left: 2.0rem;
+    color : white;
+    line-height: 35px;   
+    z-index: 21;
+}
+
+/* CATALOGUE DE TAILLES DIMAGES POUR LES*/
+
+.section-activites .cards-activites {
+    position: relative;
+}
+
+.section-activites .cards-activites::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(360deg, rgba(0,0,0,.5) 5%, rgba(0,0,0,0) 25%);
+    z-index: 15;
+}
+
+.cards-activites {
+    overflow: hidden;
+}
+
+.zoom-effect {
+    overflow: hidden;
+}
+.cards-activites img,
+.zoom-effect img {
+    transform: scale(1);
+    transition: all .2s ease-out;
+}
+
+.cards-activites:hover img,
+.zoom-effect img:hover  {
+    transform: scale(1.2);
+}
+
+img.img-fit {
+    box-shadow : 0px 5px 20px rgba(0, 0, 0, 0.20);
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+img.p-bottom {
+    object-position: bottom;
+}
+img.p-top {
+    object-position: top;
+}
+img.p-right {
+    object-position: right;
+}
+img.p-left {
+    object-position: left;
+}
+
+img.h300 {
+    height: 300px;
+}
+img.h350 {
+    height: 350px;
+}
+img.h400 {
+    height: 400px;
+}
+img.h450 {
+    height: 450px;
+}
+img.h500 {
+    height: 500px;
+}
+img.h550 {
+    height: 550px;
+}
+img.h600 {
+    height: 600px;
+}
+img.h650 {
+    height: 650px;
+}
+img.h700 {
+    height: 700px;
+}
+img.h715 {
+    height: 715px;
+}
+img.h750 {
+    height: 750px;
+}
+
+/*****************************************
+SECTION MAPS PAGE HOME
+*****************************************/
+
+.section-maps {
+    background-color: #F8F5EF;
+}
+.section-maps span{
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.text-section-maps{
+    text-align: center;
+    padding: 110px;
+}
+
+.p-section-maps{
+    padding: 38px 30px;
+    
+}
+
+
+.maps{
+    width: 100%;
+    height: 498px;
+    margin-bottom: 120px;
+}
+
+/*****************************************
+CSS FOOTER PAGE HOME
+*****************************************/
+
+footer{
+    padding-top: 85px;
+    padding-bottom: 45px;
+    background-size: 100%;
+    background-image: linear-gradient(rgba(255, 251, 244, 0.7), rgba(255, 251, 244, 0.7)), url(/img/footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 75% 15%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.ligne_verticale{ /* Ligne sur le côté */
+    border-left:2px solid #C2B286;
+    height:200px;
+    margin-bottom: 5px;
+    margin-left: 50px;
+}
+
+.text-footer{
+    list-style:none;
+    color :black;
+    font-size : 12px;
+    padding : 5px;
+}
+
+.reseau{
+    margin-left: 210px;
+}
+
+
+/*****************************************
+CSS HEADER PAGE PROFIL
+*****************************************/
+
+#header-profil{
+    background-image: linear-gradient(rgba(43, 27, 38, 0.4), rgba(0, 0, 0, 0.4)), url(/img/Headerprofil.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 85% 53%;
+    padding-bottom: 200px;
+}
+
+.text-white-profil{
+    color: white;
+}
+
+.bio-profil{
+    margin-top: 150px;
+}
+
+.bio-profil h3{
+    margin-bottom: 30px;
+}
+
+.bio-profil h4{
+    margin-bottom: 30px;
+}
+
+.bio-profil .btn-primary{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/*****************************************
+CSS HEADER PAGE PROFIL
+*****************************************/
+
+.section-conseils h2{
+    margin-bottom: 60px;
+}
+
+
+.voyage-profil h4 {
+    margin-top: 50px;
+}
+
+
+/*****************************************
+CSS PAGE ACTIVITES
+*****************************************/
+
+
+#header-activites{
+    background-image: linear-gradient(rgba(43, 27, 38, 0.4), rgba(0, 0, 0, 0.4)), url(/img/Montgolfièreheader.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 85% 53%;
+    padding-bottom: 200px;
+}
+
+.activites-conseils h4{
+    margin-bottom: 40px;
+}
+
+#recommandation .card-body{
+    margin-top: -100px;
+    margin-bottom: 5px;
+    position : relative;
+    z-index: 40;
+}
+
+/*****************************************
+CSS MEDIAQUERY
+*****************************************/
+
+
+@media (max-width: 376px){
+    html{
+        font-size: 40%;
+    }
+
+    .section-activites{
+padding: 30px;
+    }
+}

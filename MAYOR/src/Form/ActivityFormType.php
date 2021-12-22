@@ -18,6 +18,41 @@ use Symfony\Component\Form\Extension\Core\Type\CountryType;
 
 class ActivityFormType extends AbstractType
 {
+    public function getAtmosphereTab($id = ""){
+        $tab = [
+            'Familiale' => 1,
+            'Reposant' => 2 , 
+            'Festif' => 3,
+            'Chic' => 4,
+            'Populaire' => 5,
+        ];
+        if($id == ""){
+            return $tab;
+        }else{
+            $tab = array_flip($tab);
+            return $tab[$id];
+        }
+        
+    }
+
+    public function getReservationTab($id = ""){
+        $tab = [
+            'Faut-il réserver à l’avance ? (oui)' => 'oui',
+            'Faut-il réserver à l’avance ? (non)' => 'non',
+        ];
+        $tab2 = [
+            'Faut-il réserver à l’avance ? (oui)' => 1,
+            'Faut-il réserver à l’avance ? (non)' => 0,
+        ];
+        if($id == ""){
+            return $tab;
+        }else{
+            $tab2 = array_flip($tab2);
+            return $tab2[$id];
+        }
+        
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
@@ -49,20 +84,11 @@ class ActivityFormType extends AbstractType
                 'expanded' => true
             ])
             ->add('reservation', ChoiceType::class, [
-                'choices'    => [
-                    'Faut-il réserver à l’avance ? (oui)' => 'oui',
-                    'Faut-il réserver à l’avance ? (non)' => 'non',
-                ], 
+                'choices'    => $this->getReservationTab(), 
                 'expanded' => true
             ])
             ->add('atmosphere', ChoiceType::class, [
-                'choices'    => [
-                    'Familiale' => 1,
-                    'Reposant' => 2,
-                    'Festif' => 3,
-                    'Chic' => 4,
-                    'Populaire' => 5,
-                ], 
+                'choices'    => $this->getAtmosphereTab(), 
                 'expanded' => true
             ])
             ->add('country', CountryType::class, array())
