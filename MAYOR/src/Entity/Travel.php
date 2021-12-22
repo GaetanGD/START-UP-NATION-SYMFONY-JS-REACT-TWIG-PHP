@@ -62,7 +62,7 @@ class Travel
     private $equipment;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="string", length=255)
      */
     private $transport;
 
@@ -214,12 +214,12 @@ class Travel
         return $this;
     }
 
-    public function getTransport(): ?bool
+    public function getTransport(): ?string
     {
         return $this->transport;
     }
 
-    public function setTransport(bool $transport): self
+    public function setTransport(string $transport): self
     {
         $this->transport = $transport;
 

@@ -12,6 +12,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\RangeType;
 use Symfony\Component\Validator\Constraints\File;
+use Symfony\Component\Form\CallbackTransformer;
 
 class VoyageFormType extends AbstractType
 {
@@ -29,9 +30,9 @@ class VoyageFormType extends AbstractType
                 new File([
                     'maxSize' => '4024k',
                     'mimeTypes' => [
-                        'imagee/jpeg', 
-                        'imagee/jpg', 
-                        'imagee/png'
+                        'image/jpeg', 
+                        'image/jpg', 
+                        'image/png'
                     ],
                     'mimeTypesMessage' => 'Votre photo est non valide',
                 ])
@@ -41,13 +42,13 @@ class VoyageFormType extends AbstractType
            # ->add('user_id')
             ->add('transport', ChoiceType::class, [
                 'choices' => [
-                    'avion' => 1,
-                    'train' => 2,
-                    'bus' => 3,
-                    'voiture' => 4,
-                    'moto' => 5,
-                    'vélo' => 6,
-                    'marche' => 7,
+                    'avion' => 'avion',
+                    'train' => 'train',
+                    'bus' => 'bus',
+                    'voiture' => 'voiture',
+                    'moto' => 'moto',
+                    'vélo' => 'velo',
+                    'marche' => 'marche',
                 ],
                 'expanded'=> true,
                 'multiple'=> true,
@@ -70,6 +71,14 @@ class VoyageFormType extends AbstractType
             ->add('description')
             ->add('advice')
         ;
+        $builder->get('transport')->addModelTransformer(new CallbackTransformer(
+            function ($array) {
+                return json_decode($array);
+            },
+            function ($array) {
+                return json_encode($array);
+            }
+        ));    
     }
 
     public function configureOptions(OptionsResolver $resolver): void

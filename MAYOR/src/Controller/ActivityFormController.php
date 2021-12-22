@@ -47,7 +47,7 @@ class ActivityFormController extends AbstractController
 
             $em ->flush();
 
-            return new Response('Produit ajouté !'); 
+            return $this->redirectToRoute('voyage_form'); 
 
 
         }
