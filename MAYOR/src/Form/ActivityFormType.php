@@ -41,8 +41,8 @@ class ActivityFormType extends AbstractType
             'Faut-il réserver à l’avance ? (non)' => 'non',
         ];
         $tab2 = [
-            'Faut-il réserver à l’avance ? (oui)' => 1,
-            'Faut-il réserver à l’avance ? (non)' => 0,
+            'oui' => 1,
+            'non' => 0,
         ];
         if($id == ""){
             return $tab;
