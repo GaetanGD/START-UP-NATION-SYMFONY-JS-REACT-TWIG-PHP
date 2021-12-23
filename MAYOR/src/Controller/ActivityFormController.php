@@ -58,4 +58,5 @@ class ActivityFormController extends AbstractController
             'ActivityForm' =>  $form->createView()
         ]);
     }
+      
 }
