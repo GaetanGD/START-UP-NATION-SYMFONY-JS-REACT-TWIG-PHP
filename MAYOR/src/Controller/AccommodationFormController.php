@@ -31,7 +31,7 @@ class AccommodationFormController extends AbstractController
 
             $someNewFilename = uniqid(); 
 
-            $directory = '../../public/uploads';
+            $directory = '../public/uploads';
 
             $file = $form['main_picture']->getData();
             $extension = $file->guessExtension();

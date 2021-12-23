@@ -3,6 +3,11 @@
 {% block title %}Hello AccommodationFormController!{% endblock %}
 
 {% block body %}
+<body style="background-image: url('/style/images/Snow_road.png'); background-size:cover;
+">
+
+<div style="display:flex; flex-direction: column;position: relative; margin-left:10px
+">
 <h1>Hebergement</h1>
 {{ form_start(AccommodationForm) }}
      <a href="example.com">Activité</a>
@@ -47,4 +52,6 @@
     <br>
 <button type="submit" class="btn">Validé</button>
     {{ form_end(AccommodationForm) }}
+    </div>
+</body>
 {% endblock %}
