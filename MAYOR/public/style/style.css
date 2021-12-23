@@ -493,6 +493,10 @@ span  {
     
 }
 
+.titre-left{
+    text-align: left;
+}
+
  h2.gold-line-left span,
  h2.gold-line-right span {
      position:relative; 
@@ -562,6 +566,10 @@ box-shadow: 1px 3px 15px 1px rgba(9, 9, 9, 0.358); ;
     text-align: center;
     padding-bottom: 70px;
 }
+.card{
+    background-color:rgba(0,0,0,0);
+    border-style: none;
+}
 
 .card-text{
 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -587,6 +595,10 @@ a.page {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold ;
     font-size: 1.8rem;
+}
+
+.btn-warning:hover{
+    background-color: #eec32d;
 }
 
 .btn-primary{
@@ -742,6 +754,7 @@ CSS HEADER PAGE HOME
 
 header{ 
     background-image: linear-gradient(rgba(43, 27, 38, 0.4), rgba(0, 0, 0, 0.4)), url(/style/images/header.jpg);
+    background-image: linear-gradient(rgba(43, 27, 38, 0.4), rgba(0, 0, 0, 0.4)), url(/img/header.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 85% 53%;
@@ -820,6 +833,7 @@ header h1{
 
 } */
 
+
 /*****************************************
 CSS MAIN PAGE HOME
 *****************************************/
@@ -827,11 +841,41 @@ CSS MAIN PAGE HOME
 /*****************************************
 SECTION PAYSAGES PAGE HOME
 *****************************************/
+/* Carousel start*/
+
+.slider{
+    position: relative;
+    z-index: 0;
+}
+
+.btn-slider{
+    color: #C2B286;    
+    background-color: #F8F5EF ;
+    width: 2.5vw;
+    height: 2.5vw;
+    box-shadow:0px 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    min-width: 26px;
+    min-height: 26px; 
+}
+
+.boutonslider{
+    position: absolute;
+    top: 53%;
+    z-index: 30;
+}
+
+.boutonslider .droite{
+    margin-left: 86.333%;
+}
+
+/* Carousel end */
 
 .section-paysages {
     padding-top: 70px;
     padding-bottom: 90px;
     background-color: #F8F5EF;
+    position: relative;
 }
 .section-paysages span{
     padding-right: 50px;
@@ -889,6 +933,7 @@ span::after {
 
 .cardspecialiste{
     background-image: url(/images/Billy.jpg);
+    background-image: url(../img/Billy.jpg);
     background-size: 150px;
     background-repeat: no-repeat;
 }
@@ -1037,6 +1082,7 @@ span::after {
 }
 
 /* CATALOGUE DE TAILLES DIMAGES POUR LES*/
+
 .section-activites .cards-activites {
     position: relative;
 }
@@ -1126,6 +1172,9 @@ img.h750 {
     /*****************************************
     SECTION MAPS PAGE HOME
     *****************************************/
+/*****************************************
+SECTION MAPS PAGE HOME
+*****************************************/
 
 .section-maps {
     background-color: #F8F5EF;
@@ -1188,6 +1237,77 @@ footer{
 }
 
 
+/*****************************************
+CSS HEADER PAGE PROFIL
+*****************************************/
+
+#header-profil{
+    background-image: linear-gradient(rgba(43, 27, 38, 0.4), rgba(0, 0, 0, 0.4)), url(/img/Headerprofil.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 85% 53%;
+    padding-bottom: 200px;
+}
+
+.text-white-profil{
+    color: white;
+}
+
+.bio-profil{
+    margin-top: 150px;
+}
+
+.bio-profil h3{
+    margin-bottom: 30px;
+}
+
+.bio-profil h4{
+    margin-bottom: 30px;
+}
+
+.bio-profil .btn-primary{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+/*****************************************
+CSS HEADER PAGE PROFIL
+*****************************************/
+
+.section-conseils h2{
+    margin-bottom: 60px;
+}
+
+
+.voyage-profil h4 {
+    margin-top: 50px;
+}
+
+
+/*****************************************
+CSS PAGE ACTIVITES
+*****************************************/
+
+
+#header-activites{
+    background-image: linear-gradient(rgba(43, 27, 38, 0.4), rgba(0, 0, 0, 0.4)), url(/img/Montgolfièreheader.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 85% 53%;
+    padding-bottom: 200px;
+}
+
+.activites-conseils h4{
+    margin-bottom: 40px;
+}
+
+#recommandation .card-body{
+    margin-top: -100px;
+    margin-bottom: 5px;
+    position : relative;
+    z-index: 40;
+}
 
 /*****************************************
 CSS MEDIAQUERY
