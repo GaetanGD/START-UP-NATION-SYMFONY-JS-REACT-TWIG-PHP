@@ -29,7 +29,7 @@ class ActivityFormController extends AbstractController
 
            $someNewFilename = uniqid(); 
 
-            $directory = 'uploads';
+           $directory = '../public/uploads';
 
             $file = $form['main_picture']->getData();
             $extension = $file->guessExtension();
