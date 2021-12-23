@@ -171,4 +171,24 @@ class VoyageFormController extends AbstractController
 
     }
 
+    /**
+     * @Route("/voyage/backpack", name="backpack")
+     */
+    public function backpack(Request $request): Response
+    {
+
+    // $em =$this->getDoctrine()->getManager();
+
+    // $voyage = $em->getRepository(Travel::class)->findAll();
+
+        return $this->render('voyage_form/backpack.html.twig', [
+            'controller_name' => 'HomeController',
+            'navbartitle' => true,
+            'nav' => true
+        ]);
+        
+
+        
+    }
+
 }

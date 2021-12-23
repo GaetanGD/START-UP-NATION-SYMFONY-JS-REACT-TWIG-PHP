@@ -25,11 +25,12 @@ class SurveyController extends AbstractController
     /**
      * @Route("/survey", name="survey")
      */
-    public function index(UserInterface $user): Response
+    public function index(): Response
     {
-
-        $id = $user->getId();
-        dump($id);
+ 
+        if($this->getUser()==null){
+            return $this->redirectToRoute('app_login');
+        }
         return $this->render('survey/index.html.twig', [
             'controller_name' => 'SurveyController',
         ]);
