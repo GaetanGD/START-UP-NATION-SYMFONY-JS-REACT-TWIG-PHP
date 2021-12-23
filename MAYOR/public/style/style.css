@@ -377,6 +377,11 @@ background: linear-gradient(90.1deg, #FFFCF7 18.7%, rgba(255, 252, 247, 0.9035) 
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: nowrap;
+}
+
+
+/*  ------------- Style global --------------  */
+
 html{
     font-size: 62.5%;
 } 
