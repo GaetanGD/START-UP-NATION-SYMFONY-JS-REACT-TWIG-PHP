@@ -385,6 +385,7 @@ background: linear-gradient(90.1deg, #FFFCF7 18.7%, rgba(255, 252, 247, 0.9035) 
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    margin: 50px 0;
 }
 
 .crea_contenu a{
@@ -404,10 +405,334 @@ background: linear-gradient(90.1deg, #FFFCF7 18.7%, rgba(255, 252, 247, 0.9035) 
     line-height: 140.62%;
 
     display: flex;
+    justify-content: center;
     align-items: center;
     text-align: center;
 
     color: #3D3E41;
+}
+
+.crea_contenu a.active{
+    text-decoration: none;
+    width: 267px;
+    height: 66px;
+
+    background: linear-gradient(0deg, #FACE32, #FACE32), linear-gradient(0deg, #AAA7C7, #AAA7C7), #6C65B3;
+
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 140.62%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: #3D3E41;
+}
+
+/*  ------------- Style questionnaire de voyage  --------------  */
+
+.global_form_voyage h3{
+    font-family: Oceanwide;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 44px;
+    color: #3D3E41;
+    margin-bottom: 15px;
+}
+
+.global_form_voyage p{
+    font-family: Helvetica Neue;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    color: #3D3E41;
+    margin-bottom: 15px;
+}
+
+.title_picture_travel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 25vh 0;
+    background:linear-gradient(220deg, #FFFCF7 18.7%, rgba(255, 252, 247, 0.9035) 29.73%, rgba(255, 252, 247, 0.4) 62.89%), url(images/image\ 10.jpg) center;
+}
+
+.title_picture_travel div{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: center;
+}
+
+.title_picture_travel_end{
+    align-items: end;
+}
+
+.title_picture_travel_start{
+    align-items: start;
+}
+
+.title_picture_travel textarea{
+    width: 50%;
+    resize: none;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+}
+
+.title_picture_travel label{
+    padding: 10px 20px;
+    margin-left: 15px;
+    background-color: #FACE32;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+}
+
+.title_picture_travel input{
+    display: none;
+}
+
+.description_conseil{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 0;
+}
+
+.description_conseil textarea{
+    width: 70%;
+    resize: none;
+    background: linear-gradient(0deg, #F2F2F2, #F2F2F2), #1A1A37;
+    box-shadow: inset 0px 1px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 140px;
+    padding: 20px;
+}
+
+.prix_matériel_voyage{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20vh 0;
+    background: #FFFBF4;
+}
+
+.prix_matériel_voyage div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border: 1px solid black;
+    height: 200px;
+    margin: 20px;
+}
+
+.form_equipement_price{
+    width: 40%;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+    margin: 15px;
+    padding: 5px;
+}
+
+.form_equipement_oui_non{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: center;
+    margin: 0 !important;
+    border: none !important;
+}
+
+.form_equipement_oui_non input{
+    visibility: hidden;
+}
+
+.form_equipement_oui_non label{
+    color: #000000fd;
+    font-size: 1.4rem;
+    background: #d3d3d3fd;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.form_equipement_oui_non input:checked + label{
+    color: #000000fd;
+    font-weight: bold;
+    font-size: 2rem;
+    background: #FACE32;
+    box-shadow: inset 0px 1px 15px rgba(0, 0, 0, 0.418);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.transport_meteo_voyage{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20vh 0;
+}
+
+.transport_meteo_voyage div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border: 1px solid black;
+    height: 200px;
+    margin: 20px;
+}
+
+.range_form2{
+    width: 80%;
+}
+
+.annul_border{
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+    width: 100% !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+.annul_border input{
+    visibility: hidden;
+    width: 1px;
+}
+
+.annul_border label{
+    color: #000000fd;
+    font-size: 1.2rem;
+    background: #d3d3d3fd;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.annul_border input:checked + label{
+    color: #000000fd;
+    font-weight: bold;
+    font-size: 1.6rem;
+    background: #FACE32;
+    box-shadow: inset 0px 1px 15px rgba(0, 0, 0, 0.418);
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.transport_meteo_voyage img{
+    width: 50px;
+}
+
+.description_conseil2{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10vh 0;
+    background: #FFFBF4;
+}
+
+.description_conseil2 textarea{
+    width: 70%;
+    resize: none;
+    background: linear-gradient(0deg, #F2F2F2, #F2F2F2), #1A1A37;
+    box-shadow: inset 0px 1px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 140px;
+    padding: 20px;
+}
+
+.description_conseil2 button{
+    text-decoration: none;
+    width: 267px;
+    height: 66px;
+
+    background: linear-gradient(0deg, #FACE32, #FACE32), linear-gradient(0deg, #AAA7C7, #AAA7C7), #6C65B3;
+
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 140.62%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: #3D3E41;
+}
+
+/*  ------------- Style page ajouter des activités à un voyage --------------  */
+
+.title_text_activities_travel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.panneau_d_affichage{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px 50px;
+}
+
+.card_container{
+    width: 18%;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.13);
+    margin: 20PX 10px;
+}
+
+.card_image{
+    height: 200px;
+}
+
+.card_container .card h5{
+    font-family: Oceanwide;
+    font-style: normal;
+    font-weight: 600;
+    color: #3D3E41;
+}
+
+.card_body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 150px;
+}
+
+.card_container a{
+    text-decoration: none;
+    color: black;
+    background: linear-gradient(0deg, #FACE32, #FACE32), linear-gradient(0deg, #AAA7C7, #AAA7C7), #6C65B3;
+    padding: 10px 5px;
+
+    box-shadow: inset 0px 5px 20px rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
 }
 
 /*  ------------- Style global --------------  */

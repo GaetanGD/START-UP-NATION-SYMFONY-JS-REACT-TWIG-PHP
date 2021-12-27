@@ -3,30 +3,75 @@
 {% block title %}Hello VoyageFormController!{% endblock %}
 
 {% block body %}
+<header>
 <h1>Mon voyage</h1>
-<a href="example.com">Activité</a>
-<a href="example.com">Restauration</a>
-<a href="example.com">Hébergement</a>
-<a href="example.com">Destination</a>
+</header>
+    <div class="crea_contenu">
+        <a href="example.com">Activité</a>
+        <a href="example.com">Restauration</a>
+        <a href="example.com">Hébergement</a>
+        <a href="{{ path('voyage_form') }}" class="active">Voyage</a>
+    </div>
     {{ form_start(VoyageForm) }}
-
-       {{ form_row(VoyageForm.name)}}
-       {{ form_row(VoyageForm.main_picture)}}
-       {{ form_row(VoyageForm.transport)}}
-       {{ form_row(VoyageForm.weather_report)}}
-       {{ form_row(VoyageForm.price)}}
-       {{ form_row(VoyageForm.equipment)}}
-       {{ form_row(VoyageForm.description)}}
-       {{ form_row(VoyageForm.advice)}}
-        <button> {{button_label|default('Modifier')}}</button>
+    <div class="global_form_voyage">
+        <div class="title_picture_travel">
+            <div class="title_picture_travel_end">
+                {{ form_widget(VoyageForm.name)}}
+            </div>
+            <div class="title_picture_travel_start">
+                {{ form_row(VoyageForm.main_picture)}}
+            </div>
+        </div>
+        <div class="description_conseil">
+            <h3>Description</h3>
+            <p>Décrivez en quelques lignes votre Trip</p>
+        {{ form_widget(VoyageForm.description)}}
+        </div>
+        <div class="prix_matériel_voyage">
+            <div>
+                <h3>Prix</h3>
+                <p>Veuillez indiquer le prix approximatif de votre Trip</p>
+                {{ form_widget(VoyageForm.price, {'attr':{'class':'form_equipement_price'}}) }}
+            </div>
+            <div>
+                <h3>Matériel</h3>
+                <p>Faut-il prévoir du matériel ?</p>
+                {{ form_widget(VoyageForm.equipment)}}
+            </div>
+        </div>
+        <div class="transport_meteo_voyage">
+            <div>
+                <h3>Transport</h3>
+                <p>Quels sont les transports empruntés ?</p>
+                {{ form_widget(VoyageForm.transport)}}
+            </div>
+            <div>
+                <h3>Météo</h3>
+                <p>Quel est le climat sur place ?</p>
+                {{ form_widget(VoyageForm.weather_report)}}
+                <div class="annul_border">
+                    <img src="/style/images/soleil.png"/>
+                    <img src="/style/images/nuage.png"/>
+                    <img src="/style/images/orage.png"/>
+                    <img src="/style/images/neige.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="description_conseil2">
+            <h3>Conseils</h3>
+            <p>Avez vous quelques conseils (coutumes locales, dangers, etc...) ?</p>
+        {{ form_widget(VoyageForm.advice)}}
+        </div>
+        <div class="description_conseil2">
+            <button> {{button_label|default('Modifier')}}</button>
+        </div>
+    </div>
         {{ form_end(VoyageForm) }}
 
-    <section>
+    <section class="title_text_activities_travel">
         <h2>Mon top restaurations</h2>
         <p>Quels sont vos bon plan culinaire ?</p>
-      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-        Ajouter
-        </button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">Ajouter</button>
 
         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -37,13 +82,14 @@
             </div>
             <div class="modal-body">
             {% for restauration in restaurations %}
-                <div>
-                <div class="card" style="width: 18rem;">
-                <img src="/uploads/{{restauration.mainPicture}}" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card_container">
+                <div class="card">
+                <img src="/uploads/{{restauration.mainPicture}}" class="card-img-top card_image" alt="...">
+                <div class="card-body card_body">
                     <h5 class="card-title">{{restauration.name}}</h5>
                     <p class="card-text">{{restauration.description}}</p>
                     <a href="{{ path('voyage_form_add_activities_save', {'travel':travel.id, 'activity':restauration.id} ) }}" class="btn btn-primary">Ajouter</a>
+                </div>
                 </div>
                 </div>
             {% endfor %}
@@ -58,21 +104,24 @@
 
     </section>
 
-    <section>
+        <hr>
+    <section class="panneau_d_affichage">
             {% for restauration in restaurationSave %}
-                <div>
-                <div class="card" style="width: 18rem;">
-                <img src="/uploads/{{restauration.mainPicture}}" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card_container">
+                <div class="card">
+                <img src="/uploads/{{restauration.mainPicture}}" class="card-img-top card_image" alt="...">
+                <div class="card-body card_body">
                     <h5 class="card-title">{{restauration.name}}</h5>
                     <p class="card-text">{{restauration.description}}</p>
                     <a href="{{ path('voyage_form_sup_activities_save', {'travel':travel.id, 'activity':restauration.id} ) }}">Supprimer</a>
                 </div>
                 </div>
+                </div>
             {% endfor %}
     </section>
+        <hr>
 
-    <section>
+    <section class="title_text_activities_travel">
         <h2>Mon top activités</h2>
         <p>Quelles sont les activité à faire ?</p>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
@@ -88,13 +137,14 @@
             </div>
             <div class="modal-body">
             {% for activity in activities %}
-                <div>
-                <div class="card" style="width: 18rem;">
-                <img src="/uploads/{{activity.mainPicture}}" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card_container">
+                <div class="card">
+                <img src="/uploads/{{activity.mainPicture}}" class="card-img-top card_image" alt="...">
+                <div class="card-body card_body">
                     <h5 class="card-title">{{activity.name}}</h5>
                     <p class="card-text">{{activity.description}}</p>
                     <a href="{{ path('voyage_form_add_activities_save', {'travel':travel.id, 'activity':activity.id} ) }}" class="btn btn-primary">Ajouter</a>
+                </div>
                 </div>
                 </div>
             {% endfor %}
@@ -107,21 +157,24 @@
         </div>
         </div>
     </section>
-    <section>
+        <hr>
+    <section class="panneau_d_affichage">
             {% for activity in activitySave %}
-                <div>
-                <div class="card" style="width: 18rem;">
-                <img src="/uploads/{{activity.mainPicture}}" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card_container">
+                <div class="card">
+                <img src="/uploads/{{activity.mainPicture}}" class="card-img-top card_image" alt="...">
+                <div class="card-body card_body">
                     <h5 class="card-title">{{activity.name}}</h5>
                     <p class="card-text">{{activity.description}}</p>
                     <a href="">Supprimer</a>
                 </div>
                 </div>
+                </div>
             {% endfor %}
     </section>
+        <hr>
 
-    <section>
+    <section class="title_text_activities_travel">
         <h2>Mon top hébergements</h2>
         <p>Où dormir ?</p>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal3">
@@ -137,13 +190,14 @@
             </div>
             <div class="modal-body">
             {% for hebergement in hebergements %}
-                <div>
-                <div class="card" style="width: 18rem;">
-                <img src="/uploads/{{hebergement.mainPicture}}" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card_container">
+                <div class="card">
+                <img src="/uploads/{{hebergement.mainPicture}}" class="card-img-top card_image" alt="...">
+                <div class="card-body card_body">
                     <h5 class="card-title">{{hebergement.name}}</h5>
                     <p class="card-text">{{hebergement.description}}</p>
                     <a href="{{ path('voyage_form_add_activities_save', {'travel':travel.id, 'activity':hebergement.id} ) }}" class="btn btn-primary">Ajouter</a>
+                </div>
                 </div>
                 </div>
             {% endfor %}
@@ -156,19 +210,22 @@
         </div>
         </div>
     </section>
-    <section>
+        <hr>
+    <section class="panneau_d_affichage">
             {% for hebergement in hebergementSave %}
-                <div>
-                <div class="card" style="width: 18rem;">
-                <img src="/uploads/{{hebergement.mainPicture}}" class="card-img-top" alt="...">
-                <div class="card-body">
+                <div class="card_container">
+                <div class="card">
+                <img src="/uploads/{{hebergement.mainPicture}}" class="card-img-top card_image" alt="...">
+                <div class="card-body card_body">
                     <h5 class="card-title">{{hebergement.name}}</h5>
                     <p class="card-text">{{hebergement.description}}</p>
                     <a href="">Supprimer</a>
                 </div>
                 </div>
+                </div>
             {% endfor %}
     </section>
+        <hr>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 {% endblock %}

@@ -20,10 +20,12 @@ class VoyageFormType extends AbstractType
     {
         $builder
         ->add('name', TextareaType::class, [
-            'attr' => ['class' => 'tinymce'],
+            'attr' => [
+                'placeholder' => 'Nom de votre Trip'
+            ],
         ])
         ->add('main_picture', FileType::class, [
-            'label' => 'Photo de couverture',
+            'label' => 'Ajouter une photo de couverture',
             'mapped' => false,
             'required' => false,
             'constraints' => [
@@ -41,6 +43,9 @@ class VoyageFormType extends AbstractType
            # ->add('activity')
            # ->add('user_id')
             ->add('transport', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'annul_border'
+                ],
                 'choices' => [
                     'avion' => 'avion',
                     'train' => 'train',
@@ -57,11 +62,14 @@ class VoyageFormType extends AbstractType
                 'attr' => [
                     'min' => 1,
                     'max' => 4,
-                    'class' => 'range_form'
+                    'class' => 'range_form2'
                 ]
             ])
             ->add('price')
             ->add('equipment', ChoiceType::class, [
+                'attr' => [
+                    'class' => 'form_equipement_oui_non'
+                ],
                 'choices' => [
                     'oui' => 'oui',
                     'non' => 'non',

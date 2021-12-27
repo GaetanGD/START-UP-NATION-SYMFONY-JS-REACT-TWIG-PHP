@@ -51,6 +51,8 @@ class VoyageFormController extends AbstractController
             return $this->render('voyage_form/index.html.twig', [
                 'controller_name' => 'VoyageFormController',
                 'VoyageForm' =>  $form->createView(),
+                'navbartitle' => true,
+                'nav' => true
             ]);
         }
 
