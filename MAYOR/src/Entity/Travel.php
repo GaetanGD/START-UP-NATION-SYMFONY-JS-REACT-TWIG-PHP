@@ -50,6 +50,33 @@ class Travel
      */
     private $advice;
 
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $price;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $equipment;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $transport;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $weather_report;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
+    
     public function __construct()
     {
         $this->activity = new ArrayCollection();
@@ -162,4 +189,65 @@ class Travel
 
         return $this;
     }
+
+    public function getPrice(): ?int
+    {
+        return $this->price;
+    }
+
+    public function setPrice(int $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getEquipment(): ?string
+    {
+        return $this->equipment;
+    }
+
+    public function setEquipment(string $equipment): self
+    {
+        $this->equipment = $equipment;
+
+        return $this;
+    }
+
+    public function getTransport(): ?string
+    {
+        return $this->transport;
+    }
+
+    public function setTransport(string $transport): self
+    {
+        $this->transport = $transport;
+
+        return $this;
+    }
+
+    public function getWeatherReport(): ?int
+    {
+        return $this->weather_report;
+    }
+
+    public function setWeatherReport(int $weather_report): self
+    {
+        $this->weather_report = $weather_report;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
 }

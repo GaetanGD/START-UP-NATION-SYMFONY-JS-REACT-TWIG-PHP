@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User index{% endblock %}
+
+{% block body %}
+    <h1>User index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Email</th>
+                <th>Roles</th>
+                <th>Password</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Newsletter</th>
+                <th>Cgu</th>
+                <th>User_picture</th>
+                <th>Certification</th>
+                <th>About</th>
+                <th>Budget</th>
+                <th>Temperature</th>
+                <th>Duration</th>
+                <th>Favorite_food</th>
+                <th>Geographical_area</th>
+                <th>Means_of_locomotion</th>
+                <th>Difficulty_level</th>
+                <th>Accompaniement</th>
+                <th>Comfort</th>
+                <th>Environment</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.newsletter ? 'Yes' : 'No' }}</td>
+                <td>{{ user.cgu ? user.cgu|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ user.userPicture }}</td>
+                <td>{{ user.certification }}</td>
+                <td>{{ user.about }}</td>
+                <td>{{ user.budget }}</td>
+                <td>{{ user.temperature }}</td>
+                <td>{{ user.duration }}</td>
+                <td>{{ user.favoriteFood }}</td>
+                <td>{{ user.geographicalArea }}</td>
+                <td>{{ user.meansOfLocomotion }}</td>
+                <td>{{ user.difficultyLevel }}</td>
+                <td>{{ user.accompaniement }}</td>
+                <td>{{ user.comfort }}</td>
+                <td>{{ user.environment }}</td>
+                <td>
+                    <a href="{{ path('utilisateur_show', {'id': user.id}) }}">show</a>
+                    <a href="{{ path('utilisateur_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="22">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('utilisateur_new') }}">Create new</a>
+{% endblock %}

@@ -9,12 +9,8 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/adrien/Desktop/Serveur_Mamp/MAYOR/START-UP-NATION/MAYOR/src/Controller/SurveyController.php'|file_link(0) }}">src/Controller/SurveyController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/adrien/Desktop/Serveur_Mamp/MAYOR/START-UP-NATION/MAYOR/templates/survey/index.html.twig'|file_link(0) }}">templates/survey/index.html.twig</a></code></li>
-    </ul>
+    <h1>Questionnaire<h1>
+    <a href="{{path('surveyquestion1') }}">Suivant</a>
+    <a href="{{path('home') }}">Plus tard</a>
 </div>
 {% endblock %}

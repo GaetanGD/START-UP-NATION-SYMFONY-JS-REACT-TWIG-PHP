@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Formulaire Activité{% endblock %}
+
+{% block body %}
+<body style="background-image: url('/style/images/Snow_road.png'); background-size:cover;
+">
+
+<div style="display:flex; flex-direction: column;position: relative; margin-left:10px
+">
+<h1>Formulaire Activité</h1>
+{{ form_start(ActivityForm) }}
+   <a href="example.com">Activité</a>
+   <a href="example.com">Restauration</a>
+   <a href="example.com">Hébergement</a>
+   <a href="example.com">Destination</a>
+    <h3>Nom de l'activité</h3>
+    {{ form_widget(ActivityForm.name) }}
+    <h3>Photo de couverture</h3>
+    <p>Veuillez joindre des photos de votre activité</p>
+    {{ form_widget(ActivityForm.main_picture) }}
+    <h3>Prix de l'activité</h3>
+    <p>Veuillez indiquer un prix approximatif de votre activité</p>
+    {{ form_widget(ActivityForm.price) }}
+    <h3>Matériel</h3>
+    <p>Faut-il prévoir du matériel ?</p>
+    {{ form_widget(ActivityForm.equipment) }}
+    <h3>Réservation</h3>
+    <p>Faut-il réserver à l’avance ?</p>
+    {{ form_widget(ActivityForm.reservation) }}
+    <h3>Ambiance</h3>
+    <p>Quel est l’ambiance du lieu ?</p>
+    {{ form_widget(ActivityForm.atmosphere) }}
+    <h3>Où se situe cette activité ?</h3>
+    <h3>Pays</h3>
+    {{ form_widget(ActivityForm.country) }}
+    <h3>Ville</h3>
+    {{ form_widget(ActivityForm.city) }}
+    <h3>Code Postale</h3>
+    {{ form_widget(ActivityForm.postal_code) }}
+    <h3>Adresse</h3>
+    {{ form_widget(ActivityForm.address_1) }}
+    <h3>Calendrier</h3>
+    <p>Quand avez-vous visitez ce lieu ?</p>
+    {{ form_widget(ActivityForm.calendar) }}
+    <h3>Description</h3>
+    <p>Décrivez en quelques lignes l’activité</p>
+    {{ form_widget(ActivityForm.description) }}
+    <h3>Points Forts</h3>
+    <p>Décrivez en quelques lignes les points fort de l’activité</p>
+    {{ form_widget(ActivityForm.strong_point) }}
+    <h3>Points Faibles</h3>
+    <p>Décrivez en quelques lignes les points faible de l’activité</p>
+    {{ form_widget(ActivityForm.weak_point) }}
+    <br>
+<button type="submit" class="btn">Validé</button>
+</div>
+</body>
+{{ form_end(ActivityForm) }}
+
+{% endblock %}

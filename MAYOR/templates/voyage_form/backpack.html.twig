@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VoyageFormController!{% endblock %}
+
+{% block body %}
+<header>
+<h1>Mes parcours prévus</h1>
+</header>
+
+<section>
+    <h2>Ajouter un voyage ou des activités</h2>
+        <div class="crea_contenu">
+            <a href="example.com">Activité</a>
+            <a href="example.com">Restauration</a>
+            <a href="example.com">Hébergement</a>
+            <a href="{{ path('voyage_form') }}">Voyage</a>
+        </div>
+</section>
+
+
+<section>
+    <h2>Mes parcours prévus</h2>
+    {# {% for sejour in voyage %}
+        <div>
+                <img src=""/>
+            <div>
+                <div>
+                    <p>Pays</p>
+                    <p>description</p>
+                </div>
+                <div>
+                    <button href="">Voir</button>
+                </div>
+            </div>
+        </div>
+     {% endfor %} #}
+
+</section>
+
+
+
+
+
+{% endblock %}

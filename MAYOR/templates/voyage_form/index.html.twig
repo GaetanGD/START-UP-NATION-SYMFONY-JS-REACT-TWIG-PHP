@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello VoyageFormController!{% endblock %}
+
+{% block body %}
+<header>
+<h1>Mon voyage</h1>
+</header>
+    <div class="crea_contenu">
+        <a href="example.com">Activité</a>
+        <a href="example.com">Restauration</a>
+        <a href="example.com">Hébergement</a>
+        <a href="{{ path('voyage_form') }}" class="active">Voyage</a>
+    </div>
+    {{ form_start(VoyageForm) }}
+    <div class="global_form_voyage">
+        <div class="title_picture_travel">
+            <div class="title_picture_travel_end">
+                {{ form_widget(VoyageForm.name)}}
+            </div>
+            <div class="title_picture_travel_start">
+                {{ form_row(VoyageForm.main_picture)}}
+            </div>
+        </div>
+        <div class="description_conseil">
+            <h3>Description</h3>
+            <p>Décrivez en quelques lignes votre Trip</p>
+        {{ form_widget(VoyageForm.description)}}
+        </div>
+        <div class="prix_matériel_voyage">
+            <div>
+                <h3>Prix</h3>
+                <p>Veuillez indiquer le prix approximatif de votre Trip</p>
+                {{ form_widget(VoyageForm.price, {'attr':{'class':'form_equipement_price'}}) }}
+            </div>
+            <div>
+                <h3>Matériel</h3>
+                <p>Faut-il prévoir du matériel ?</p>
+                {{ form_widget(VoyageForm.equipment)}}
+            </div>
+        </div>
+        <div class="transport_meteo_voyage">
+            <div>
+                <h3>Transport</h3>
+                <p>Quels sont les transports empruntés ?</p>
+                {{ form_widget(VoyageForm.transport)}}
+            </div>
+            <div>
+                <h3>Météo</h3>
+                <p>Quel est le climat sur place ?</p>
+                {{ form_widget(VoyageForm.weather_report)}}
+                <div class="annul_border">
+                    <img src="/style/images/soleil.png"/>
+                    <img src="/style/images/nuage.png"/>
+                    <img src="/style/images/orage.png"/>
+                    <img src="/style/images/neige.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="description_conseil2">
+            <h3>Conseils</h3>
+            <p>Avez vous quelques conseils (coutumes locales, dangers, etc...) ?</p>
+        {{ form_widget(VoyageForm.advice)}}
+        </div>
+        <div class="description_conseil2">
+            <button> {{button_label|default('Valider')}}</button>
+        </div>
+    </div>
+        {{ form_end(VoyageForm) }}
+
+{% endblock %}
