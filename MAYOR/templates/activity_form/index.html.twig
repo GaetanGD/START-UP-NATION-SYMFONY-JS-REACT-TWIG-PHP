@@ -1,10 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Activité{% endblock %}
+{% block title %}Formulaire Activité{% endblock %}
 
 {% block body %}
+<body style="background-image: url('/style/images/Snow_road.png'); background-size:cover;
+">
 
-<h1>Activité</h1>
+<div style="display:flex; flex-direction: column;position: relative; margin-left:10px
+">
+<h1>Formulaire Activité</h1>
 {{ form_start(ActivityForm) }}
    <a href="example.com">Activité</a>
    <a href="example.com">Restauration</a>
@@ -50,6 +54,8 @@
     {{ form_widget(ActivityForm.weak_point) }}
     <br>
 <button type="submit" class="btn">Validé</button>
+</div>
+</body>
 {{ form_end(ActivityForm) }}
 
 {% endblock %}
