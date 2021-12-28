@@ -27,7 +27,7 @@ class TravelRepository extends ServiceEntityRepository
             ->orderBy('t.name')
             ->where('t.name LIKE :query')
             ->setParameter('query', '%' . $query . "%")
-            ->getQuery()
+            ->getQuery() ->setMaxResults(5)
             ->getArrayResult()
             ;
     }

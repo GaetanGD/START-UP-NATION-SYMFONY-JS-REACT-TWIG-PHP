@@ -33,21 +33,20 @@ const Recherche = () => {
         <>
             {/* <form> */}
                 <input class="form-control" type="text" onChange={textChange} value={query} placeholder="&ensp;Recherche" aria-label="Search"/>
-                <button class="search_button"><img src="/style/images/search.svg"/></button>
             {/* </form>
             <input type="text" onChange={textChange} value={query}/> */}
             {results.length > 0 ? (
                 <ul>
                     {results.map((travel)=> {
                         return (
-                            <li key={travel.id}>
-                                <a href={`/travel/${travel.id}`}>{travel.name}</a>
+                            <li key={travel.id} class="search_bar_result_li">
+                                <a href={`/travel/${travel.id}`} class="search_bar_result">{travel.name}</a>
                             </li>
                         );
                     })}
                 </ul>
             ) : query.length > 0 && !loading ? (
-                <div>Aucun résultat</div>
+                <div class="search_bar_result">Aucun résultat</div>
             ) : (
                 !loading && <div>Effectuer une recherche</div>
             )}
