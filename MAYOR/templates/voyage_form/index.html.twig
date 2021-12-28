@@ -7,9 +7,9 @@
 <h1>Mon voyage</h1>
 </header>
     <div class="crea_contenu">
-        <a href="example.com">Activité</a>
-        <a href="example.com">Restauration</a>
-        <a href="example.com">Hébergement</a>
+        <a href="{{ path('activity_form') }}">Activité</a>
+        <a href="{{ path('restaurant_form') }}">Restauration</a>
+        <a href="{{ path('accommodation_form') }}">Hébergement</a>
         <a href="{{ path('voyage_form') }}" class="active">Voyage</a>
     </div>
     {{ form_start(VoyageForm) }}

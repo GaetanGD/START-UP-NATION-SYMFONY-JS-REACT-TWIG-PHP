@@ -58,7 +58,8 @@ class RestaurantFormController extends AbstractController
 
         return $this->render('restaurant_form/index.html.twig', [
             'controller_name' => 'RestaurantFormController',
-
+            'navbartitle' => true,
+            'nav' => true,
             'RestaurantForm' =>  $form->createView()
         ]);
     }
