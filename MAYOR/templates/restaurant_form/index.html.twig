@@ -4,55 +4,121 @@
 
 
 {% block body %}
-<body style="background-image: url('/style/images/Snow_road.png'); background-size:cover;
-">
-
-<div style="display:flex; flex-direction: column;position: relative; margin-left:10px
-">
+<body>
+<header>
 <h1>Restaurant</h1>
-{{ form_start(RestaurantForm) }}
-      <a href="example.com">Activité</a>
-   <a href="example.com">Restauration</a>
-   <a href="example.com">Hébergement</a>
-   <a href="example.com">Destination</a>
-    <h3>Nom de l'activité</h3>
-    {{ form_widget(RestaurantForm.name) }}
-    <h3>Photo de couverture</h3>
-    <p>Veuillez joindre des photos de votre activité</p>
-    {{ form_widget(RestaurantForm.main_picture) }}
-    <h3>Prix de l'activité</h3>
-    <p>Veuillez indiquer un prix approximatif de votre activité</p>
-    {{ form_widget(RestaurantForm.price) }}
-    <h3>Réservation</h3>
-    <p>Faut-il réserver à l’avance ?</p>
-    {{ form_widget(RestaurantForm.reservation) }}
-    <h3>Ambiance</h3>
-    <p>Quel est l’ambiance du lieu ?</p>
-    {{ form_widget(RestaurantForm.atmosphere) }}
-    <h3>Où se situe cette activité ?</h3>
-    <h3>Pays</h3>
-    {{ form_widget(RestaurantForm.country) }}
-    <h3>Ville</h3>
-    {{ form_widget(RestaurantForm.city) }}
-    <h3>Code Postale</h3>
-    {{ form_widget(RestaurantForm.postal_code) }}
-    <h3>Adresse</h3>
-    {{ form_widget(RestaurantForm.address_1) }}
-    <h3>Calendrier</h3>
-    <p>Quand avez-vous visitez ce lieu ?</p>
-    {{ form_widget(RestaurantForm.calendar) }}
-    <h3>Description</h3>
-    <p>Décrivez en quelques lignes l’activité</p>
-    {{ form_widget(RestaurantForm.description) }}
-    <h3>Points Forts</h3>
-    <p>Décrivez en quelques lignes les points fort de l’activité</p>
-    {{ form_widget(RestaurantForm.strong_point) }}
-    <h3>Points Faibles</h3>
-    <p>Décrivez en quelques lignes les points faible de l’activité</p>
-    {{ form_widget(RestaurantForm.weak_point) }}
-    <br>
-<button type="submit" class="btn">Validé</button>
-    {{ form_end(RestaurantForm) }}
+</header>
+<div class="crea_contenu">
+     <a href="{{ path('activity_form') }}">Activité</a>
+   <a href="{{ path('restaurant_form') }}" class="active">Restauration</a>
+   <a href="{{ path('accommodation_form') }}">Hébergement</a>
+   <a href="{{ path('voyage_form') }}">Destination</a>
+</div>
+    {{ form_start(RestaurantForm) }}
+    <div class="global_form_voyage">
+        <div class="css_form">
+            <div class="css_form2">
+                <h3>Nom du restaurant</h3>
+                {{ form_widget(RestaurantForm.name)}}
+            </div>
+        </div>
+
+
+         <div class="css_form">
+            <div class="css_form2">
+             <h3>Photo de couverture</h3>
+             <p>Veuillez joindre des photos du restaurant</p>
+                {{ form_row(RestaurantForm.main_picture)}}
+            </div>
+        </div>
+            
+     
+        
+        <div class="css_form">
+        <div class="css_form2">
+            <h3>Prix</h3>
+            <p>Veuillez indiquer un prix approximatif de votre activité</p>
+            {{ form_widget(RestaurantForm.price) }}
+        </div>
+        </div>
+
+
+
+        <div class="css_form">
+        <div class="css_form2">
+            <h3>Réservation</h3>
+            <p>Faut-il réserver à l’avance ?</p>
+            {{ form_widget(RestaurantForm.reservation) }}
+        </div>
+        </div>
+
+
+        <div class="css_form">
+            <div class="css_form2">
+
+            <h3>Ambiance</h3>
+            <p>Quel est l’ambiance du lieu ?</p>
+            {{ form_widget(RestaurantForm.atmosphere) }}
+
+            </div>
+        </div>
+
+        <div class="css_form">
+        <div class="css_form2">
+                <h3>Où se situe cette activité ?</h3>
+                <h3>Pays</h3>
+                {{ form_widget(RestaurantForm.country) }}
+        </div>
+        </div>
+
+
+        <div class="css_form">
+        <div class="css_form2">
+                <h3>Ville</h3>
+                {{ form_widget(RestaurantForm.city) }}
+        </div>
+        </div>
+
+        <div class="css_form">
+        <div class="css_form2">
+                <h3>Code Postale</h3>
+                {{ form_widget(RestaurantForm.postal_code) }}
+        </div>
+        </div>
+
+        <div class="css_form">
+        <div class="css_form2">
+                <h3>Adresse</h3>
+                {{ form_widget(RestaurantForm.address_1) }}
+
+        </div>
+        </div>
+
+        <div class="css_form">
+        <div class="css_form2">
+                <h3>Calendrier</h3>
+                <p>Quand avez-vous visitez ce lieu ?</p>
+                {{ form_widget(RestaurantForm.calendar) }}
+        </div>
+        </div>        
+
+
+    <div class="description_conseil">
+        <h3>Description</h3>
+        <p>Décrivez en quelques lignes l’activité</p>
+        {{ form_widget(RestaurantForm.description) }}
+        <h3>Points Forts</h3>
+        <p>Décrivez en quelques lignes les points fort de l’activité</p>
+        {{ form_widget(RestaurantForm.strong_point) }}
+        <h3>Points Faibles</h3>
+        <p>Décrivez en quelques lignes les points faible de l’activité</p>
+        {{ form_widget(RestaurantForm.weak_point) }}
     </div>
-</body>
+    <br>
+    <div class="description_conseil2">
+            <button> {{button_label|default('Valider')}}</button>
+        </div>
+    {{ form_end(RestaurantForm) }}
+</div>
+    </body>
 {% endblock %}

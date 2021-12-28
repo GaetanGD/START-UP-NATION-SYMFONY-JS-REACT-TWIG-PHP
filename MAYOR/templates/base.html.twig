@@ -27,7 +27,7 @@
 <div class="supperposition_nav">
 <nav class="main_navbar">
   <div class="container-fluid">
-        <a href="index.html">
+        <a href="{{ path('home') }}">
             <svg width="70" height="70" viewBox="0 0 82 82" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -110,8 +110,8 @@
   </div>
     <div class="container-fluid">
         <ul>
-            <a href=""><li>Destination</li></a>
-            <a href=""><li>Activité</li></a>
+            <a href="{{ path('voyage_form') }}"><li>Destination</li></a>
+            <a href="{{ path('activity_form') }}"><li>Activité</li></a>
             <a href=""><li>Map</li></a>
         </ul>
   </div>

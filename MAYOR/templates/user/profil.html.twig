@@ -36,7 +36,7 @@
                     <nav class="navbar navbar-expand-lg navbar-light bg-transparent float-right pt-4">
                         <!-- BARRE NAV -->
 
-                        <a href="index.html">
+                        <a href="{{ path('home') }}">
                             <!--LOGO-->
                             <svg width="70" height="70" viewBox="0 0 82 82" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -131,10 +131,10 @@
                                 <ul class="navbar-nav mx-auto">
                                     <li class="nav-item">
                                         <a class="nav-link active text-white me-5" aria-current="page"
-                                            href="accueildestination.html">Destination</a>
+                                            href="{{ path('voyage_form') }}">Destination</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-white me-5" href="accueilactivites.html">Activités</a>
+                                        <a class="nav-link text-white me-5" href="{{ path('activity_form') }}">Activités</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-white me-5" href="maps.html">Maps</a>
