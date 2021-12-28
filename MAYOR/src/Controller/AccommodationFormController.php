@@ -56,7 +56,8 @@ class AccommodationFormController extends AbstractController
 
         return $this->render('accommodation_form/index.html.twig', [
             'controller_name' => 'AccommodationFormController',
-
+            'navbartitle' => true,
+            'nav' => true,
             'AccommodationForm' =>  $form->createView()
         ]);
     }

@@ -10,30 +10,32 @@
 <section>
     <h2>Ajouter un voyage ou des activités</h2>
         <div class="crea_contenu">
-            <a href="example.com">Activité</a>
-            <a href="example.com">Restauration</a>
-            <a href="example.com">Hébergement</a>
+            <a href="{{ path('activity_form') }}">Activité</a>
+            <a href="{{ path('restaurant_form') }}">Restauration</a>
+            <a href="{{ path('accommodation_form') }}">Hébergement</a>
             <a href="{{ path('voyage_form') }}">Voyage</a>
         </div>
 </section>
 
 
-<section>
+<section class="backpack_section">
     <h2>Mes parcours prévus</h2>
-    {# {% for sejour in voyage %}
-        <div>
-                <img src=""/>
-            <div>
-                <div>
-                    <p>Pays</p>
-                    <p>description</p>
+     {% for sejour in Travel %}
+        <div class="backpack_container">
+        <div class="backpack_container_picture">
+            <img class="sejour_picture" src="/uploads/{{sejour.mainPicture}}"/>
+        </div>
+            <div class="backpack_txt_btn">
+                <div class="backpack_txt">
+                    <p class="sejour_name">{{sejour.name}}</p>
+                    <p>{{sejour.description}}</p>
                 </div>
-                <div>
-                    <button href="">Voir</button>
+                <div class="backpack_btn">
+                    <button class="sejour_btn" href="{#{ path('activity',{'id':activité.id}) }#}">Voir</button>
                 </div>
             </div>
         </div>
-     {% endfor %} #}
+     {% endfor %} 
 
 </section>
 

@@ -37,8 +37,8 @@ class ActivityFormType extends AbstractType
 
     public function getReservationTab($id = ""){
         $tab = [
-            'Faut-il réserver à l’avance ? (oui)' => 'oui',
-            'Faut-il réserver à l’avance ? (non)' => 'non',
+            'OUI' => 'oui',
+            'NON' => 'non',
         ];
         $tab2 = [
             'oui' => 1,
@@ -78,8 +78,8 @@ class ActivityFormType extends AbstractType
             ])
             ->add('equipment', ChoiceType::class, [
                 'choices'    => [
-                    'Faut-il prévoir du matériel ? (oui)' => 'oui',
-                    'Faut-il prévoir du matériel ? (non)' => 'non',
+                    'OUI' => 'oui',
+                    'NON' => 'non',
                 ], 
                 'expanded' => true
             ])

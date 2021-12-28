@@ -11,7 +11,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
-
 class VoyageFormController extends AbstractController
 {
     /**
@@ -178,15 +177,18 @@ class VoyageFormController extends AbstractController
      */
     public function backpack(Request $request): Response
     {
+        $em = $this->getDoctrine();
 
-    // $em =$this->getDoctrine()->getManager();
-
-    // $voyage = $em->getRepository(Travel::class)->findAll();
+        $travel = $em ->getRepository(Travel::class)->findBy([
+            'user_id' => $this -> getUser() -> getID() 
+        ]);
 
         return $this->render('voyage_form/backpack.html.twig', [
             'controller_name' => 'HomeController',
             'navbartitle' => true,
-            'nav' => true
+            'nav' => true,
+            'Travel' => $travel,
+            
         ]);
         
 

@@ -54,7 +54,8 @@ class ActivityFormController extends AbstractController
 
         return $this->render('activity_form/index.html.twig', [
             'controller_name' => 'ActivityFormController',
-
+            'navbartitle' => true,
+            'nav' => true,
             'ActivityForm' =>  $form->createView()
         ]);
     }
