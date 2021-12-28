@@ -19,6 +19,19 @@ class TravelRepository extends ServiceEntityRepository
         parent::__construct($registry, Travel::class);
     }
 
+    public function FindTravel($query)
+    {
+        return $this
+            ->createQueryBuilder('t')
+            ->select('t')
+            ->orderBy('t.name')
+            ->where('t.name LIKE :query')
+            ->setParameter('query', '%' . $query . "%")
+            ->getQuery()
+            ->getArrayResult()
+            ;
+    }
+
     // /**
     //  * @return Travel[] Returns an array of Travel objects
     //  */

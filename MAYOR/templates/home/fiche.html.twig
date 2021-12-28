@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+
+{% block stylesheets %}
+
+{% endblock %}
+
+
+{% block body %}
+
+<main class="search_container_fiche">
+  <style>
+    article{
+      padding: 200px 50%;
+      background : url(/uploads/{{travel.mainPicture}});
+      z-index: -1;
+      margin-top:-150px;
+      display: flex;
+      flex-direction: row;
+    }
+  </style>
+  <article class="">
+    <h2>{{travel.name}}</h2>
+  </article>
+{# <img src="/uploads/{{travel.mainPicture}}" class="background_page_secondaire"> #}
+    <section>
+        
+        <div class="search_betc">
+            <div class="mutiple_div_search">
+                <h3>Budget</h3>
+                <p>{{travel.price}} €</p>
+            </div>
+
+            <div class="mutiple_div_search">
+                <h3>Équipement</h3>
+                <p>{{travel.equipment}}</p>
+            </div>
+
+            <div class="mutiple_div_search">
+                <h3>Transport</h3>
+                <div class="multiple_transport_search">
+                {% for transports in travel.transport|slice(2, -2)|split("\",\"") %}
+                        <div class="transport_validate"> {{transports}} </div>
+                {% endfor %}
+                </div>
+            </div>
+
+            <div class="mutiple_div_search">
+                <h3>Climat</h3>
+                <p>
+                {% for weatherReports in travel.weatherReport|split("\",\"") %}
+                        <img src="/style/images/meteo/{{weatherReports}}.png"/>
+                {% endfor %}
+                </p>
+            </div>
+        </div>
+        <div class="search_dc">
+            <div>
+                <h3>Description</h3>
+                <p>{{travel.description}}</p>
+            </div>
+            <div>
+                <h3>Conseils</h3>
+                <p>{{travel.advice}}</p>
+            </div>
+        </div>
+    </section>
+    </section>
+        <div>
+            <div>
+                <h3>Activités</h3>
+                    {% for activity in activitySave %}
+                    <div class="card_container">
+                    <div class="card">
+                    <img src="/uploads/{{activity.mainPicture}}" class="card-img-top card_image" alt="...">
+                    <div class="card-body card_body">
+                        <h5 class="card-title">{{activity.name}}</h5>
+                        <p class="card-text">{{activity.description}}</p>
+                        <a href="" class="btn btn-primary">Voir</a>
+                    </div>
+                    </div>
+                    </div>
+                    {% endfor %}
+            </div>
+            <div>
+                <h3>Restaurants</h3>
+                    {% for restauration in restaurationSave %}
+                        <div class="card_container">
+                        <div class="card">
+                        <img src="/uploads/{{restauration.mainPicture}}" class="card-img-top card_image" alt="...">
+                        <div class="card-body card_body">
+                            <h5 class="card-title">{{restauration.name}}</h5>
+                            <p class="card-text">{{restauration.description}}</p>
+                            <a href="" class="btn btn-primary">Voir</a>
+                        </div>
+                        </div>
+                        </div>
+                    {% endfor %}    
+            </div>
+               <div>
+                <h3>Hébergements</h3>
+                    {% for hebergement in hebergementSave %}
+                        <div class="card_container">
+                        <div class="card">
+                        <img src="/uploads/{{hebergement.mainPicture}}" class="card-img-top card_image" alt="...">
+                        <div class="card-body card_body">
+                            <h5 class="card-title">{{hebergement.name}}</h5>
+                            <p class="card-text">{{hebergement.description}}</p>
+                            <a href="" class="btn btn-primary">Voir</a>
+                        </div>
+                        </div>
+                        </div>
+                    {% endfor %}
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}
