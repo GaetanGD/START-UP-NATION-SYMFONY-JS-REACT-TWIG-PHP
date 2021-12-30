@@ -3,23 +3,29 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
+
+<section class="bacground_subscription">
 <form method="post">
+ <a href="{{ path('home') }}" class="label_in_connexion">&lt;&lt; Acceuil</a>
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
     {% if app.user %}
         <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+            Vous êtes connecté en tant que : {{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
+    <h1 class="h3 mb-3 font-weight-normal title_register">Se connecter</h1>
+    <div class="space_in_connexion">
+        <label for="inputEmail" class="label_in_connexion">E-mail</label>
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    </div>
+    <div class="space_in_connexion">
+        <label for="inputPassword" class="label_in_connexion">Mot de passe</label>
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+    </div>
     <input type="hidden" name="_csrf_token"
            value="{{ csrf_token('authenticate') }}"
     >
@@ -39,4 +45,5 @@
         Sign in
     </button>
 </form>
+</section>
 {% endblock %}

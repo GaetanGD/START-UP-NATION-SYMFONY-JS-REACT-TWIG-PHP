@@ -3,14 +3,14 @@
 {% block title %}Hello SurveyController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
+<div class="intro_survey">
     <h1>Questionnaire<h1>
-    <a href="{{path('surveyquestion1') }}">Suivant</a>
-    <a href="{{path('home') }}">Plus tard</a>
+    <div>
+        <p>Le questionnaire vous permet des recommendation de voyages, d'activités, de restaurants, d'hébergements selon vos propres critères.</p>
+        <p>Grâce à cela MYOR vous fournira le meilleur endroit selon vos préférences.</p>
+    </div>
+    <a href="{{path('surveyquestion1') }}" class="intro_survey_first_button">Commencer</a>
+    <a href="{{path('home') }}" class="intro_survey_second_button">Plus tard</a>
 </div>
 {% endblock %}

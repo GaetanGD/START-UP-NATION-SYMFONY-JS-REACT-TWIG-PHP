@@ -7,9 +7,9 @@
 <h1>Mon voyage</h1>
 </header>
     <div class="crea_contenu">
-        <a href="example.com">Activité</a>
-        <a href="example.com">Restauration</a>
-        <a href="example.com">Hébergement</a>
+        <a href="{{ path('activity_form') }}">Activité</a>
+        <a href="{{ path('restaurant_form') }}">Restauration</a>
+        <a href="{{ path('accommodation_form') }}">Hébergement</a>
         <a href="{{ path('voyage_form') }}" class="active">Voyage</a>
     </div>
     {{ form_start(VoyageForm) }}
@@ -82,7 +82,7 @@
             </div>
             <div class="modal-body">
             {% for restauration in restaurations %}
-                <div class="card_container">
+                <div class="card_container_modale">
                 <div class="card">
                 <img src="/uploads/{{restauration.mainPicture}}" class="card-img-top card_image" alt="...">
                 <div class="card-body card_body">
@@ -137,7 +137,7 @@
             </div>
             <div class="modal-body">
             {% for activity in activities %}
-                <div class="card_container">
+                <div class="card_container_modale">
                 <div class="card">
                 <img src="/uploads/{{activity.mainPicture}}" class="card-img-top card_image" alt="...">
                 <div class="card-body card_body">
@@ -190,7 +190,7 @@
             </div>
             <div class="modal-body">
             {% for hebergement in hebergements %}
-                <div class="card_container">
+                <div class="card_container_modale">
                 <div class="card">
                 <img src="/uploads/{{hebergement.mainPicture}}" class="card-img-top card_image" alt="...">
                 <div class="card-body card_body">

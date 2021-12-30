@@ -28,4 +28,13 @@ class ActivityController extends AbstractController
         ]);
     }
    
+    /**
+     * @Route("/activity-integration", name="activity-integration")
+     */
+    public function activityIntégration(): Response
+    {
+
+        return $this->render('activity/activity_intégration.html.twig');
+    }
+
 }

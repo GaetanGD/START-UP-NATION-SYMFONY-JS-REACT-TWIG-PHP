@@ -1,32 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello RestaurantController!{% endblock %}
+{% block title %}intégration activity{% endblock %}
 
 {% block body %}
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make Your Own Road</title>
-
-
-    <!-- CSS Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="/css/style.css">
-
-
-</head>
-
-
 
 <body>
 
 
-    <header style="background-image: url('/uploads/{{Restaurant.mainPicture}}')" id="header-activites">
+    <header id="header-activites">
         <div class="container-fluid">
 
             <div class="fond-nav">
@@ -36,9 +17,9 @@
                     <nav class="navbar navbar-expand-lg navbar-light bg-transparent float-right pt-4">
                         <!-- BARRE NAV -->
 
-                        <a href="/">
+                        <a href="{{ path('home') }}">
                             <!--LOGO-->
-                            <img src="/style/images/logo.svg" alt="" width="70">
+                            <img src="style/images/logo.svg" alt="" width="70">
                         </a>
 
                         <!-- <a class="navbar-brand" href="#"></a> -->
@@ -121,16 +102,16 @@
 
                     <div class="col-12 col-lg-3">
 
-                        <img src="/style/images/Ellipse 1.png" alt="">
+                        <img src="style/images/Ellipse 1.png" alt="">
                     </div>
 
                     <div class="col-12 col-lg-6 col-xl-7 text-white-profil">
 
-                        <h3>{{Restaurant.name}}</h3>
+                        <h3>Baptême de l'air en Montgolfière</h3>
 
-                        <h4 class="text-white-profil">{{Restaurant.city}} - {{Restaurant.country}}</h4>
+                        <h4 class="text-white-profil">Antalya - Turquie</h4>
 
-                        <p>{{Restaurant.userId.firstname}} - {{Restaurant.userId.lastname}}</p>
+                        <p> By Billy Bob</p>
 
                     </div>
 
@@ -209,7 +190,7 @@
 
 
                     <div class="col-12 col-lg-6">
-                        {# <img src="/style/images/BaptèmeAir.jpg" class="img-cover-fluid" alt="image matos"> #}
+                        {# <img src="style/images/BaptèmeAir.jpg" class="img-cover-fluid" alt="image matos"> #}
 
                     </div>
 
@@ -217,12 +198,30 @@
 
                         <div class="col-10-offset-1 col-lg-11 offset-1">
 
-                            <h4>{{Restaurant.name}}</h4>
+                            <h4>Le Vol de Découverte</h4>
                         </div>
 
                         <div class="col-10-offset-1 col-lg-11 offset-1">
 
-                            <p class="col-10-offset-1 col-lg-11">{{Restaurant.description}}</p>
+                            <p>Les Vols de Découverte ont lieu d’avril à Novembre. Durée:
+                                1 à 2 heures de vol effectif. Durée totale de la sortie: environ 5 heures.
+
+                            <p> Lors des Vols de Découverte, on découvre que La Turquie est composé d’une grande
+                                richesse et
+                                variété de paysages, allant de la grande région des Montagnes, des vallées parcourues
+                                par
+                                les rivières, les déserts, le vignoble et enfin la plaine.</p>
+
+
+                            <p> Ces paysages sont constellés d’un grand nombre de petits villages typiques et
+                                traditionnels
+                                ainsi que de nombreux monuments et architectures. Ces paysages sont changeant, au gré
+                                des
+                                saisons et de la luminosité. </p>
+
+                            <p> La région d’Antalya constitue un terrain de jeu idéal pour un vol en montgolfière afin
+                                d’y
+                                faire de belles découvertes et de rencontres riches en émotion.</p>
 
                         </div>
 
@@ -238,9 +237,16 @@
 
                         <h4>Une expérience inédite</h4>
 
-                        <p class="col-10-offset-1 col-lg-11">{{Restaurant.strongPoint}}</p>
-                        <p class="col-10-offset-1 col-lg-11">{{Restaurant.weakPoint}}</p>
+                        <p class="col-10-offset-1 col-lg-11"> Après un briefing et le gonflage du ballon auquel vous
+                            êtes invités à participer, c’est l’heure de s’envoler. </p>
 
+                        <p> Nous volons à différentes altitudes en fonction des paysages, des conditions de vent, des
+                            belles opportunités qui ne manqueront pas de se présenter. Les montgolfières n’étant pas
+                            dirigeables, chaque vol est véritablement unique.</p>
+
+                        <p> Au retour sur terre, c’est le moment du partage des émotions. Petit déjeuner ou collation
+                            pour clôturer tous les vols : Mezzes, Dolma avec un café turc et remise du certificat de
+                            baptême de l’air personnalisé selon les traditions de l’aérostation ! </p>
 
                     </div>
 
@@ -249,7 +255,7 @@
 
 
                     <div class="col-12 col-lg-6">
-                        <img src="/style/images/Montgolfièreconseils.jpg" class="img-cover-fluid" alt="image matos">
+                        <img src="style/images/Montgolfièreconseils.jpg" class="img-cover-fluid" alt="image matos">
 
                     </div>
 
@@ -283,7 +289,7 @@
 
 
 
-                                <img src="/style/images/Montgolfièrerecco.jpg" class="col-sm-12 col-lg-11 " alt="image matos">
+                                <img src="style/images/Montgolfièrerecco.jpg" class="col-sm-12 col-lg-11 " alt="image matos">
 
                     </div>
 
@@ -295,7 +301,7 @@
 
                             <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
                                 <h3>Prix</h3>
-                                <p>{{Restaurant.price}} €</p>
+                                <p>~ 200€</p>
 
                                 <svg width="90" height="90" viewBox="0 0 120 120" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -327,7 +333,7 @@
 
                             <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
                                 <h3>Localisation</h3>
-                                <p>{{Restaurant.city}} - {{Restaurant.country}}</p>
+                                <p>Antalya - Turquie</p>
 
                                 <svg width="90" height="90" viewBox="0 0 120 120" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -348,7 +354,7 @@
 
                             <div class="offset-2 offset-sm-12 col-8 col-sm-6 col-md-4">
                                 <h3>Réservation</h3>
-                                <p>{{ restaurantForm.getReservationTab(Restaurant.reservation) }}</p>
+                                <p>Oui</p>
 
                                 <svg width="90" height="90" viewBox="0 0 120 120" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -365,7 +371,7 @@
 
                             <div class="offset-2 offset-sm-0 col-8 col-sm-6 col-md-4">
                                 <h3>Ambiance</h3>
-                                <p>{{ restaurantForm.getAtmosphereTab(Restaurant.atmosphere) }}</p>
+                                <p>Familiale</p>
                                 <svg width="90" height="90" viewBox="0 0 121 120" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="60.5" cy="60" r="58.75" fill="white" />
@@ -416,7 +422,7 @@
                     <div class="col-6 col-lg-3">
                         <div class="card2">
                             <div class="zoom-effect">
-                                <img src="/style/images/Billy.jpg" class="card-img-top" alt="image Christina Paredes">
+                                <img src="style/images/Billy.jpg" class="card-img-top" alt="image Christina Paredes">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Billy Bob</h5>
@@ -429,7 +435,7 @@
                     <div class="col-lg-3">
                         <div class="card2">
                             <div class="zoom-effect">
-                                <img src="/style/images/Jessica.jpg" class="card-img-top" alt="image">
+                                <img src="style/images/Jessica.jpg" class="card-img-top" alt="image">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Jessica Parker</h5>
@@ -442,7 +448,7 @@
                     <div class="col-6 col-lg-3">
                         <div class="card2">
                             <div class="zoom-effect">
-                                <img src="/style/images/Robin.jpg" class="card-img-top" alt="image Christina Paredes">
+                                <img src="style/images/Robin.jpg" class="card-img-top" alt="image Christina Paredes">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Robin Cliff</h5>
@@ -456,7 +462,7 @@
                     <div class="col-lg-3">
                         <div class="card2">
                             <div class="zoom-effect">
-                                <img src="/style/images/Christina.jpg" class="card-img-top" alt="image Christina Paredes">
+                                <img src="style/images/Christina.jpg" class="card-img-top" alt="image Christina Paredes">
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">Christina Paredes</h5>
@@ -506,7 +512,8 @@
     </main>
 
 
-
-
 </body>
+
+
+
 {% endblock %}

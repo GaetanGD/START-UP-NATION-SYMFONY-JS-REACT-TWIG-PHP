@@ -129,7 +129,9 @@ class VoyageFormController extends AbstractController
             "travel" => $travel,
             "restaurationSave" => $restaurationSave,
             "activitySave" => $activitySave,
-            "hebergementSave" => $hebergementSave
+            "hebergementSave" => $hebergementSave,
+            'navbartitle' => true,
+            'nav' => true
         ]);
 
     }
